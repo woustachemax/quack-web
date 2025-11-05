@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
-import { Sparkles, ArrowRight, Github, Copy, Check } from "lucide-react"
+import { Sparkles, Github, Copy, Check, Terminal } from "lucide-react"
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 
 export const Hero = () => {
@@ -31,9 +31,9 @@ export const Hero = () => {
   },[hideTerminal])
 
   const commands = {
-    npm: 'npm install quackstack',
-    pnpm: 'pnpm add quackstack',
-    bun: 'bun add quackstack'
+    npm: 'npm install -g quackstack',
+    pnpm: 'pnpm add -g quackstack',
+    bun: 'bun add -g quackstack'
   };
 
   const handleCopy = async () => {
@@ -75,9 +75,10 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center max-w-md mx-auto mt-4">
-          <button className="group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-yellow-400/20 hover:bg-yellow-400/30 border border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300">
+          <button onClick={()=> window.location.href='/documentation'}
+          className="group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-yellow-400/20 hover:bg-yellow-400/30 border border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300">
             <span>Get Started</span>
-            <ArrowRight className="w-4 h-4"/>
+            <Terminal className="w-4 h-4"/>
           </button>
           <button onClick={()=> window.open('https://github.com/woustachemax/QuackStack')}
           className="group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-stone-800/50 hover:bg-stone-800/70 border border-stone-700 hover:border-stone-600 text-neutral-200 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300">
