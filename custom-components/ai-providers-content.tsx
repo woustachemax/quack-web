@@ -70,6 +70,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
           </div>
 
           <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">About Embeddings</h3>
+            <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+              <p className="text-blue-300 text-sm font-semibold">💡 Local Embeddings Only</p>
+              <p className="text-stone-300 text-xs mt-2">
+                QuackStack uses <span className="font-semibold text-blue-300">local embeddings</span> to index your code on your machine. No separate embedding API needed! OpenAI is only used to generate answers from the code snippets we find.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Why Choose OpenAI?</h3>
             
             <div className="space-y-3">
@@ -166,6 +176,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               <p className="text-stone-300 text-sm">
                 <span className="text-yellow-400 font-mono">claude-3-5-sonnet-20241022</span>
                 <span className="text-stone-500 ml-2">- Latest Sonnet model</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">About Embeddings</h3>
+            <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+              <p className="text-blue-300 text-sm font-semibold">💡 Local Embeddings Only</p>
+              <p className="text-stone-300 text-xs mt-2">
+                QuackStack uses <span className="font-semibold text-blue-300">local embeddings</span> to index your code on your machine. No separate embedding API needed! Claude is only used to generate answers from the code snippets we find.
               </p>
             </div>
           </div>
@@ -272,6 +292,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
           </div>
 
           <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">About Embeddings</h3>
+            <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+              <p className="text-blue-300 text-sm font-semibold">💡 Local Embeddings Only</p>
+              <p className="text-stone-300 text-xs mt-2">
+                QuackStack uses <span className="font-semibold text-blue-300">local embeddings</span> to index your code on your machine. No separate embedding API needed! Gemini is only used to generate answers from the code snippets we find.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Why Choose Gemini?</h3>
             
             <div className="space-y-3">
@@ -373,6 +403,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
           </div>
 
           <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">About Embeddings</h3>
+            <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+              <p className="text-blue-300 text-sm font-semibold">💡 Local Embeddings Only</p>
+              <p className="text-stone-300 text-xs mt-2">
+                QuackStack uses <span className="font-semibold text-blue-300">local embeddings</span> to index your code on your machine. No separate embedding API needed! DeepSeek is only used to generate answers from the code snippets we find.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Why Choose DeepSeek?</h3>
             
             <div className="space-y-3">
@@ -469,6 +509,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               <p className="text-stone-300 text-sm">
                 <span className="text-yellow-400 font-mono">mistral-large-latest</span>
                 <span className="text-stone-500 ml-2">- Their most capable model</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">About Embeddings</h3>
+            <div className="bg-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+              <p className="text-blue-300 text-sm font-semibold">💡 Local Embeddings Only</p>
+              <p className="text-stone-300 text-xs mt-2">
+                QuackStack uses <span className="font-semibold text-blue-300">local embeddings</span> to index your code on your machine. No separate embedding API needed! Mistral is only used to generate answers from the code snippets we find.
               </p>
             </div>
           </div>

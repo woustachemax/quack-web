@@ -1,6 +1,7 @@
 import React from 'react'
 import { Code, CheckCircle, Sparkles } from 'lucide-react'
 import { CodeBlock } from './code-block'
+import { SimpleCodeBlock } from './simpler-code-block'
 
 export function IntegrationsContent({ activeSection }: { activeSection: string }) {
   const content: Record<string, React.ReactElement> = {
@@ -233,7 +234,7 @@ export function IntegrationsContent({ activeSection }: { activeSection: string }
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Directory Structure</h3>
             
-            <CodeBlock code={`.continue/
+            <SimpleCodeBlock code={`.continue/
 └── context.md    # Your codebase context`} />
           </div>
 
@@ -295,7 +296,7 @@ export function IntegrationsContent({ activeSection }: { activeSection: string }
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Configuration Example</h3>
             
-            <CodeBlock code={`# .aider.conf.yml
+            <SimpleCodeBlock code={`# .aider.conf.yml
 read:
   - .aider.context.md
 
@@ -306,7 +307,7 @@ edit-format: whole`} />
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-stone-200">Using with Aider</h3>
             
-            <CodeBlock code={`# Aider automatically reads .aider.conf.yml
+            <SimpleCodeBlock code={`# Aider automatically reads .aider.conf.yml
 aider
 
 # Or explicitly specify config
