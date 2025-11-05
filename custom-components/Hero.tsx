@@ -1,13 +1,13 @@
 'use client'
-import React, { useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import  { useEffect } from "react"
 import { useState } from "react"
 import { Sparkles, ArrowRight,Github } from "lucide-react"
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 
 export const Hero = () => {
   const [mouse, setMouse] = useState({x:0, y:0});
   const [activeTab, setActiveTab] = useState<'npm' | 'pnpm' | 'bun'>('npm');
+  const [hideTerminal, setHideTerminal] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -23,6 +23,13 @@ export const Hero = () => {
     };
   }, []);
 
+  useEffect(()=>{
+    const handle = setTimeout(() => {
+      setHideTerminal(false);
+    }, 7000);
+    return () => clearTimeout(handle);  
+  },[hideTerminal])
+
   const commands = {
     npm: 'npm install quackstack',
     pnpm: 'pnpm add quackstack',
@@ -30,7 +37,8 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center pt-16 px-4 sm:pt-20 sm:px-6 lg:px-8 overflow-hidden bg-stone-900">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center pt-32 sm:pt-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <BackgroundRippleEffect className="absolute inset-0 -z-10"/>
       <div 
         className="absolute top-1/4 left-1/4 w-96 h-96 opacity-8 pointer-events-none"
         style={{ background: 'radial-gradient(circle, #facc15 0%, transparent 70%)' }}
@@ -65,7 +73,8 @@ export const Hero = () => {
           <span>Get Started</span>
           <ArrowRight className="w-4 h-4"/>
         </button>
-        <button className="group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-stone-800/50 hover:bg-stone-800/70 border border-stone-700 hover:border-stone-600 text-neutral-200 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300">
+        <button onClick={()=> window.open('https://github.com/woustachemax/QuackStack')}
+        className="group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-stone-800/50 hover:bg-stone-800/70 border border-stone-700 hover:border-stone-600 text-neutral-200 text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300">
           <span>Contribute</span>
           <Github className="w-4 h-4"/>
         </button>
@@ -73,12 +82,14 @@ export const Hero = () => {
 
       </div>
 
-      <div className="relative z-10 w-full flex justify-center">
-        <div className="relative bg-white/5 backdrop-blur-xl rounded-lg sm:rounded-2xl p-1 sm:p-1.5 border border-white/10 shadow-xl w-full max-w-[90%] sm:max-w-lg lg:max-w-2xl">
-          <div className="bg-stone-900 backdrop-blur-sm rounded-lg overflow-hidden h-[100px] sm:h-[110px] lg:h-[120px] w-full border border-white/10 shadow-lg"> 
+      <div className={`relative z-10 w-full flex justify-center mt-10`}>
+    <div className={`relative bg-white/5 backdrop-blur-xl rounded-lg sm:rounded-2xl p-1 sm:p-1.5 border border-white/10 shadow-xl w-full max-w-[90%] sm:max-w-lg lg:max-w-2xl 
+         transition-all duration-500`}>
+          <div className={`bg-stone-900 backdrop-blur-sm rounded-lg overflow-hidden h-[100px] sm:h-[110px] lg:h-[120px] w-full border border-white/10 shadow-lg ${hideTerminal ? 'opacity-0 h-0 p-0 border-0 shadow-none' :    ''} transition-all duration-500`}> 
             <div className="flex items-center justify-between px-3 sm:px-4 py-2 bg-stone-800/80 backdrop-blur-sm border-b border-white/10">
               <div className="flex space-x-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div onClick={()=> setHideTerminal(!hideTerminal)}
+                className={`w-3 h-3 rounded-full bg-red-500`}></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
@@ -94,7 +105,7 @@ export const Hero = () => {
               </div>
             </div>
             <div className="flex items-center h-[calc(100%-48px)] px-3 sm:px-4 font-mono text-xs sm:text-sm text-neutral-300">
-              <span className="text-green-400">yourdevice@dev</span>
+              <span className="text-green-400">quack@stack</span>
               <span className="text-neutral-400">:</span>
               <span className="text-blue-400">~</span>
               <span className="text-neutral-400">$</span>
