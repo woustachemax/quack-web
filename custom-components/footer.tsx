@@ -1,6 +1,15 @@
 'use client'
 import { Github, Linkedin, Twitter } from "lucide-react"
 
+const XIcon = ({
+  
+}) => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-stone-500 hover:text-yellow-400" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  )
+
+
 export const Footer = () => {
   return (
     <footer className="relative bg-stone-900 border border-t border-stone-800 overflow-hidden">
@@ -17,7 +26,7 @@ export const Footer = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
           <div className="space-y-4">
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 group cursor-pointer">
               <img src='/logo.svg' alt='Logo' className='h-8 w-8'/>
               <span className="text-xl font-medium">
                 <span className="text-stone-300">Quack</span>
@@ -44,12 +53,11 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Connect */}
           <div className="space-y-4">
             <h3 className="text-stone-300 font-medium text-sm">Connect</h3>
             <div className="flex space-x-3">
               <a 
-                href="https://github.com/woustachemax/QuackStack" 
+                href="https://github.com/woustachemax" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-stone-500 hover:text-yellow-400 transition-colors"
@@ -70,7 +78,7 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-stone-500 hover:text-yellow-400 transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <XIcon />
               </a>
             </div>
           </div>

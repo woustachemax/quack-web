@@ -1,10 +1,12 @@
 'use client'
 import { useEffect, useState } from "react"
+import { Check, Copy } from "lucide-react"
 
 export const Features = () => {
   const [displayText, setDisplayText] = useState("")
   const [hasAnimated, setHasAnimated] = useState(false)
-
+  const [copied, setCopied] = useState<number | null>(null)
+  
   const fullText = "What QuackStack does?"
 
   useEffect(() => {
@@ -35,28 +37,36 @@ export const Features = () => {
     }
   }, [displayText, hasAnimated])
 
-  const commands = [
-    {
-      title: "Code Analysis",
-      cmd: "quackstack analyze ./src --explain",
-      desc: "Dive deep into your entire codebase with AI-powered analysis that understands context, dependencies, and architectural patterns. Get instant explanations of complex logic, identify technical debt, and understand how every piece fits together without reading thousands of lines manually."
-    },
-    {
-      title: "Semantic Search",
-      cmd: "quackstack search --query 'auth middleware'",
-      desc: "Stop searching for exact variable names and start finding what you actually mean. Our semantic search understands intent, not just keywords. Ask for 'authentication logic' and find all related middleware, helpers, and validation functions across your entire project, even if they're named differently."
-    },
-    {
-      title: "Call Tracing",
-      cmd: "quackstack trace --fn handleRequest",
-      desc: "Map the complete execution flow of any function in seconds. See every caller, every dependency, and every side effect in a visual tree. Perfect for debugging complex systems, understanding legacy code, or preparing for refactors. No more grep-ing through files trying to piece together the puzzle."
-    },
-    {
-      title: "Contextual QA",
-      cmd: "quackstack ask --context local",
-      desc: "Ask questions about your codebase and get answers that actually understand your architecture. QuackStack maintains full context of your project structure, coding patterns, and business logic to give you precise, actionable answers. It's like having a senior developer who's read your entire repo sitting next to you."
-    }
-  ]
+
+
+const commands = [
+  {
+    title: "Interactive Code Chat",
+    cmd: "quack",
+    desc: "Start a conversational session with your codebase. Ask questions in natural language and get instant answers with relevant code snippets. Understanding complex logic, finding implementations, or exploring unfamiliar code becomes as easy as having a conversation. The REPL stays open until you're done, maintaining full context across multiple questions."
+  },
+  {
+    title: "Universal AI Context Generation",
+    cmd: "quack --context",
+    desc: "Generate intelligent context files for all major AI coding assistants in one command. Creates .cursorrules, .windsurfrules, .clinerules, and more with deep architectural insights about your project. Your AI tools will understand your codebase structure, patterns, dependencies, and design decisions without you having to explain anything."
+  },
+  {
+    title: "Live Context Sync",
+    cmd: "quack --watch",
+    desc: "Keep your AI assistants synchronized with your codebase in real-time. Automatically detects file changes and regenerates context files so Cursor, Windsurf, and other tools always have up-to-date knowledge of your project. Run it in the background during development and never worry about stale context again."
+  },
+  {
+    title: "Full Command Reference",
+    cmd: "quack --help",
+    desc: "See all available commands, flags, and options at a glance. Get quick documentation on usage patterns, example queries, and configuration options without leaving your terminal. Perfect for discovering advanced features or refreshing your memory on command syntax when you need it."
+  }
+]
+
+  const handleCopy = async(cmd:string, index: number)=>{
+    await navigator.clipboard.writeText(cmd)
+    setCopied(index)
+    setTimeout(() => setCopied(null), 2000)
+  }
 
   return (
     <section
@@ -95,7 +105,7 @@ export const Features = () => {
                     <span className="text-xs text-stone-500">terminal</span>
                   </div>
 
-                  <div className="flex items-center min-h-[100px] sm:min-h-[110px] px-3 sm:px-4 py-3 font-mono text-xs sm:text-sm text-stone-300">
+                  <div className="flex justify-between items-center min-h-[100px] sm:min-h-[110px] px-3 sm:px-4 py-3 font-mono text-xs sm:text-sm text-stone-300">
                     <div className="flex items-center flex-wrap">
                       <span className="text-green-400">quack@stack</span>
                       <span className="text-stone-400">:</span>
@@ -103,6 +113,18 @@ export const Features = () => {
                       <span className="text-stone-400">$</span>
                       <span className="ml-2 break-all">{c.cmd}</span>
                     </div>
+                    <button
+                      onClick={() => handleCopy(c.cmd, i)}
+                      className="ml-4 p-1.5 hover:bg-white/10 rounded transition-colors "
+                      title="Copy command"
+                    >
+                      {copied === i ? (
+                        <Check className="w-4 h-4 text-green-400" />
+                      ) : (
+                        <Copy className="w-4 h-4 text-neutral-400 hover:text-yellow-400" />
+                      )}
+                    </button>
+
                   </div>
                 </div>
               </div>

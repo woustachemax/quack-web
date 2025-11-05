@@ -5,32 +5,32 @@ import { ChevronDown } from "lucide-react"
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const faqs = [
-    {
-      question: "What is QuackStack?",
-      answer: "QuackStack is an AI-powered CLI tool that helps you understand, search, and interact with your codebase. Think of it as having a senior developer who's read your entire repo sitting next to you."
-    },
-    {
-      question: "How does it work?",
-      answer: "QuackStack analyzes your codebase structure, dependencies, and patterns. It uses semantic understanding to answer questions, trace function calls, and find logic based on intent rather than just keywords."
-    },
-    {
-      question: "Do I need to upload my code somewhere?",
-      answer: "No! QuackStack runs entirely locally on your machine. Your code never leaves your computer, ensuring complete privacy and security."
-    },
-    {
-      question: "What languages does it support?",
-      answer: "QuackStack supports all major programming languages including JavaScript, TypeScript, Python, Java, Go, Rust, and many more. It understands code structure regardless of the language."
-    },
-    {
-      question: "Is it free?",
-      answer: "Yes! QuackStack is open source and completely free to use. You can find the source code on GitHub and contribute to make it even better."
-    },
-    {
-      question: "How do I get started?",
-      answer: "Simply install QuackStack via npm (npm install quackstack), run it in your project directory, and start asking questions. Check out our documentation for detailed guides and examples."
-    }
-  ]
+const faqs = [
+  {
+    question: "Do I need to upload my code somewhere?",
+    answer: "No! QuackStack generates embeddings entirely locally on your machine. Your code never leaves your computer during indexing. Only your natural language queries (like 'where is auth handled?') and small relevant code snippets are sent to the AI provider for generating conversational answers."
+  },
+  {
+    question: "What do I need to get started?",
+    answer: "You need: (1) A PostgreSQL database - free options like Neon or Supabase work great, and (2) ONE API key for conversational answers (OpenAI, Claude, Gemini, DeepSeek, or Mistral). Gemini has a free tier! Embeddings are generated locally with no API calls."
+  },
+  {
+    question: "How long does indexing take?",
+    answer: "First-time indexing depends on your codebase size. A typical project (1000-5000 files) takes 2-5 minutes. After that, only changed files are re-indexed, making updates nearly instant. Large monorepos may take 10-15 minutes initially."
+  },
+  {
+    question: "How is this different from GitHub Copilot or Cursor?",
+    answer: "Copilot and Cursor suggest code based on immediate context. QuackStack gives them FULL codebase understanding. It's complementary - QuackStack generates the .cursorrules file that makes Cursor smarter about YOUR specific project, patterns, and architecture."
+  },
+  {
+    question: "Can I use it with multiple projects?",
+    answer: "Yes! Each project gets its own isolated namespace in the database (based on directory name). Just run 'quack' in any project folder and it automatically manages separate indexes. Switch between projects freely without conflicts."
+  },
+  {
+    question: "What are the costs?",
+    answer: "QuackStack itself is 100% free and open source. Your only costs are: (1) AI provider API usage for conversational answers (Gemini has a free tier!), and (2) database hosting (Neon/Supabase offer free tiers). Most developers spend $0-5/month depending on usage."
+  }
+] 
 
   return (
     <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-stone-900">
@@ -48,17 +48,17 @@ export const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg overflow-hidden transition-all duration-300 hover:border-yellow-400/70"
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg overflow-hidden transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-4 sm:p-6 text-left"
               >
-                <h3 className="text-base sm:text-lg font-medium text-neutral-300/70 pr-4 hover:text-yellow-400/70 transition-colors">
+                <h3 className="text-base sm:text-lg font-medium pr-4 text-yellow-400/70 transition-colors">
                   {faq.question}
                 </h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-yellow-400/70 shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-neutral-300/70 shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />

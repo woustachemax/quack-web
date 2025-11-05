@@ -24,8 +24,8 @@ export const Navbar = () => {
           <div className='hidden md:flex items-center space-x-6 lg:space-x-8'>
             <a href="#features" className="text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
               Features</a>
-              <a href="#contribution" className="text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
-              Contributions</a>
+              <a href="/documentation" className="text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
+              Documentation</a>
           </div>
             <button className="md:hidden hover:text-yellow-400 items-center text-neutral-300"
                onClick={() => setMobileMenuOpen((prev)=>!prev)}>
@@ -44,8 +44,8 @@ export const Navbar = () => {
             href="#features" className="block text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
               Features</a>
             <a onClick={() => setMobileMenuOpen(false)}
-            href="#contribution" className=" block text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
-              Contributions</a>
+            href="/documentation" className=" block text-neutral-300 hover:text-yellow-400 transition-colors duration-200 text-sm lg:text-base">
+              Documentation</a>
           </div>
         </div>
       )}
