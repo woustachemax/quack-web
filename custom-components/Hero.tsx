@@ -31,9 +31,9 @@ export const Hero = () => {
   },[hideTerminal])
 
   const commands = {
-    npm: 'npm install -g quackstack',
-    pnpm: 'pnpm add -g quackstack',
-    bun: 'bun add -g quackstack'
+    npm: 'npm install -g quackstack@latest',
+    pnpm: 'pnpm install -g quackstack@latest',
+    bun: 'bun add -g quackstack@latest'
   };
 
   const handleCopy = async () => {

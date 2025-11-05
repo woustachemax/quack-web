@@ -80,7 +80,7 @@ export function ContentSection({ activeSection }: { activeSection: string }) {
             <p className="text-stone-400/90 text-sm sm:text-base">Create a <code className="bg-stone-800 px-2 py-0.5 rounded text-yellow-400">.env</code> file in your project root:</p>
             
             <SimpleCodeBlock code={`QUACKSTACK_DATABASE_URL=postgresql://user:pass@host:port/dbname
-QUACKSTACK_OPENAI_KEY=sk-...`} />
+              QUACKSTACK_OPENAI_KEY=sk-...`} />
           </div>
 
           <div className="space-y-4">
