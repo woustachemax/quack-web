@@ -1,5 +1,5 @@
 import React from 'react'
-import { Terminal, Eye, RefreshCw, Sparkles } from 'lucide-react'
+import { Terminal, Eye, RefreshCw, Sparkles, FileText } from 'lucide-react'
 import { CodeBlock } from './code-block'
 
 export function CommandsContent({ activeSection }: { activeSection: string }) {
@@ -215,6 +215,82 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
               <div>
                 <p className="font-semibold text-green-300">Instant AI Context</p>
                 <p className="text-stone-300 text-sm mt-1">Your AI coding assistant will automatically read these files and have full codebase context without any additional setup!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    readme: (
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className="text-2xl sm:text-3xl text-yellow-300/80 font-semibold tracking-tight">README Generation</h2>
+          <p className="text-stone-400/90 text-sm sm:text-base leading-relaxed">Auto-generate a comprehensive README.md from your codebase.</p>
+        </div>
+        
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">Generate README</h3>
+            <p className="text-stone-400/90 text-sm sm:text-base">Create a professional README based on your code:</p>
+            
+            <CodeBlock code="quack --readme" />
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">What Gets Generated?</h3>
+            
+            <div className="bg-stone-800/50 border border-stone-800 rounded-lg p-4">
+              <ul className="space-y-2 text-sm text-stone-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Project title and description</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Detected technologies and frameworks</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Installation instructions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Usage examples based on entry points</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Project structure overview</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Key features derived from code analysis</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 shrink-0">•</span>
+                  <span>Basic contributing guidelines</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-stone-200">Overwrite Protection</h3>
+            
+            <div className="bg-stone-800/50 border border-stone-800 rounded-lg p-4">
+              <p className="text-sm text-stone-400">If README.md already exists, QuackStack will ask for confirmation before overwriting:</p>
+              <div className="mt-3 font-mono text-xs text-stone-300 bg-stone-900 p-3 rounded">
+                <div>⚠️  README.md already exists. Overwrite? (y/n):</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-400/10 border border-green-400/30 rounded-lg p-4">
+            <div className="flex items-start space-x-3">
+              <FileText className="w-5 h-5 text-green-400 mt-0.5 shrink-0" />
+              <div>
+                <p className="font-semibold text-green-300">Smart Documentation</p>
+                <p className="text-stone-300 text-sm mt-1">QuackStack analyzes your entire codebase to generate accurate, relevant documentation that actually reflects your project!</p>
               </div>
             </div>
           </div>

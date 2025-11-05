@@ -41,6 +41,7 @@ const sections = [
       { id: 'interactive', title: 'Interactive Mode' },
       { id: 'context', title: 'Context Generation' },
       { id: 'watch', title: 'Watch Mode' },
+      {id: 'readme', title: 'Generate README' },
       { id: 'reindex', title: 'Reindexing' }
     ]
   },
