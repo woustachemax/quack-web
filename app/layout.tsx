@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import ThemeScript from "./ThemeScript";
 import "./globals.css";
 
 
@@ -21,7 +22,10 @@ export default function RootLayout({
       <body
         className='font-serif'
       >
+        <ThemeScript/>
+        <ThemeProvider>
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

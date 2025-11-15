@@ -11,6 +11,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from '@/components/ui/sidebar'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const sections = [
   {
@@ -82,26 +83,28 @@ const sections = [
 ]
 
 export function DocsSidebar({ activeSection, setActiveSection }: { activeSection: string; setActiveSection: (id: string) => void }) {
+  const { isDark } = useTheme()
+  
   return (
-    <Sidebar className="bg-stone-900 border-stone-800 [*]:bg-transparent!">
-      <SidebarHeader className="p-6 border-b border-stone-800 bg-stone-900!">
+    <Sidebar className={`${isDark ? 'bg-stone-900! border-stone-800!' : 'bg-stone-100! border-stone-300!'} [*]:bg-transparent!`}>
+      <SidebarHeader className={`p-6 border-b ${isDark ? 'border-stone-800! bg-stone-900!' : 'border-stone-300! bg-stone-100!'}`}>
         <div className="flex items-center space-x-2 group cursor-pointer"
         onClick={()=>window.location.href='/'}>
           <img src='/logo.svg' alt='Logo' className='h-6 w-6 sm:h-8 sm:w-8'/>
           <span className="text-lg sm:text-xl font-medium">
-            <span className="text-stone-300">Quack</span>
-            <span className="text-yellow-400">Stack</span>
+            <span className={isDark ? 'text-stone-300!' : 'text-stone-700!'}>Quack</span>
+            <span className={isDark ? 'text-yellow-400!' : 'text-yellow-600!'}>Stack</span>
           </span>
         </div>
-        <p className="text-xs text-stone-400 mt-2">Documentation</p>
+        <p className={`text-xs ${isDark ? 'text-stone-400!' : 'text-stone-600!'} mt-2`}>Documentation</p>
       </SidebarHeader>
       
-      <SidebarContent className="p-4 bg-stone-900! overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <SidebarContent className={`p-4 ${isDark ? 'bg-stone-900!' : 'bg-stone-100!'} overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
         {sections.map((section) => {
           const Icon = section.icon
           return (
             <SidebarGroup key={section.id}>
-              <SidebarGroupLabel className="text-yellow-400 text-xs uppercase tracking-wider font-semibold">
+              <SidebarGroupLabel className={`${isDark ? 'text-yellow-400!' : 'text-yellow-600!'} text-xs uppercase tracking-wider font-semibold`}>
                 <Icon className="w-4 h-4 mr-2" />
                 {section.title}
               </SidebarGroupLabel>
@@ -114,8 +117,12 @@ export function DocsSidebar({ activeSection, setActiveSection }: { activeSection
                         isActive={activeSection === subsection.id}
                         className={`bg-transparent!
                           ${activeSection === subsection.id
-                            ? 'bg-white/5! text-yellow-400/80!'
-                            : 'text-stone-300! hover:bg-white/5! hover:text-yellow-400/80!'
+                            ? isDark 
+                              ? 'bg-white/5! text-yellow-400/80!' 
+                              : 'bg-stone-800/5! text-yellow-600/80!'
+                            : isDark
+                              ? 'text-stone-300! hover:bg-white/5! hover:text-yellow-400/80!'
+                              : 'text-stone-700! hover:bg-stone-800/5! hover:text-yellow-600/80!'
                           }
                         `}
                       >

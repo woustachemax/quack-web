@@ -1,6 +1,8 @@
 "use client";
 import React, { useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/contexts/ThemeContext";
+
 
 export const BackgroundRippleEffect = ({
   rows = 8,
@@ -12,20 +14,31 @@ export const BackgroundRippleEffect = ({
   cellSize?: number;
   className?: string;
 }) => {
+  const { isDark } = useTheme();
   const [clickedCell, setClickedCell] = useState<{ row: number; col: number } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   return (
     <div
       ref={ref}
       className={cn(
         "absolute inset-0 h-full w-full",
-        "[--cell-border-color:rgba(250,204,21,0.08)] [--cell-fill-color:rgba(250,204,21,0.015)] [--cell-shadow-color:rgba(234,179,8,0.05)]",
+
+         isDark
+          ? "[--cell-border-color:rgba(250,204,21,0.22)] \
+            [--cell-fill-color:rgba(250,204,21,0.06)] \
+            [--cell-shadow-color:rgba(250,204,21,0.10)]"
+          : "[--cell-border-color:rgba(120,113,108,0.34)] \
+            [--cell-fill-color:rgba(120,113,108,0.14)] \
+            [--cell-shadow-color:rgba(120,113,108,0.20)]"
+
+
       )}
     >
       <div className="relative h-auto w-auto overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
+        <div className="pointer-events-none absolute inset-0 z-2 h-full w-full overflow-hidden" />
+
         <DivGrid
           key={`base-${rippleKey}`}
           className="mask-radial-from-20% mask-radial-at-top opacity-[0.35]"
@@ -46,6 +59,7 @@ export const BackgroundRippleEffect = ({
   );
 };
 
+
 type DivGridProps = {
   className?: string;
   rows: number;
@@ -65,19 +79,16 @@ type CellStyle = React.CSSProperties & {
 
 const DivGrid = ({
   className,
-  rows = 7,
-  cols = 30,
-  cellSize = 56,
-  borderColor = "rgba(250,204,21,0.2)",
-  fillColor = "rgba(250,204,21,0.05)",
-  clickedCell = null,
+  rows,
+  cols,
+  cellSize,
+  borderColor,
+  fillColor,
+  clickedCell,
   onCellClick = () => {},
   interactive = true,
 }: DivGridProps) => {
-  const cells = useMemo(
-    () => Array.from({ length: rows * cols }, (_, idx) => idx),
-    [rows, cols],
-  );
+  const cells = useMemo(() => Array.from({ length: rows * cols }, (_, idx) => idx), [rows, cols]);
 
   const gridStyle: React.CSSProperties = {
     display: "grid",
@@ -89,13 +100,12 @@ const DivGrid = ({
   };
 
   return (
-    <div className={cn("relative z-[3]", className)} style={gridStyle}>
+    <div className={cn("relative z-3", className)} style={gridStyle}>
       {cells.map((idx) => {
         const rowIdx = Math.floor(idx / cols);
         const colIdx = idx % cols;
-        const distance = clickedCell
-          ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
-          : 0;
+
+        const distance = clickedCell ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx) : 0;
         const delay = clickedCell ? Math.max(0, distance * 55) : 0;
         const duration = 200 + distance * 80;
 
@@ -111,15 +121,15 @@ const DivGrid = ({
             key={idx}
             className={cn(
               "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
-              clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
-              !interactive && "pointer-events-none",
+              clickedCell && "animate-cell-ripple [fill-mode:none]",
+              !interactive && "pointer-events-none"
             )}
             style={{
               backgroundColor: fillColor,
               borderColor: borderColor,
               ...style,
             }}
-            onClick={interactive ? () => onCellClick?.(rowIdx, colIdx) : undefined}
+            onClick={interactive ? () => onCellClick(rowIdx, colIdx) : undefined}
           />
         );
       })}

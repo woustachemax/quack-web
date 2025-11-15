@@ -1,22 +1,22 @@
 'use client'
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin, Moon, Sun } from "lucide-react"
+import { useTheme } from "@/contexts/ThemeContext"
 
-const XIcon = ({
-  
-}) => (
-    <svg viewBox="0 0 24 24" className="w-5 h-5 text-stone-500 hover:text-yellow-400" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-    </svg>
-  )
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+)
 
+export default function Footer() {
+  const { isDark, setIsDark } = useTheme()
 
-export const Footer = () => {
   return (
-    <footer className="relative bg-stone-900 border border-t border-stone-800 overflow-hidden">
+    <footer className={`relative ${isDark ? 'bg-stone-900 border-stone-800' : 'bg-stone-50 border-stone-200'} border border-t overflow-hidden transition-colors duration-300`}>
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none opacity-40">
-        <h2 className="text-[14rem] sm:text-[18rem] md:text-[22rem] lg:text-[28rem] font-black text-transparent whitespace-nowrap leading-none tracking-tighter"
+        <h2 className={`text-[14rem] sm:text-[18rem] md:text-[22rem] lg:text-[28rem] font-black text-transparent whitespace-nowrap leading-none tracking-tighter`}
             style={{ 
-              WebkitTextStroke: '2px rgba(120, 113, 108, 0.3)',
+              WebkitTextStroke: isDark ? '2px rgba(120, 113, 108, 0.3)' : '2px rgba(214, 211, 209, 0.5)',
               clipPath: 'inset(45% 0 0 0)',
             }}>
           QuackStack
@@ -29,38 +29,38 @@ export const Footer = () => {
             <div className="flex items-center space-x-1 group cursor-pointer">
               <img src='/logo.svg' alt='Logo' className='h-8 w-8'/>
               <span className="text-xl font-medium">
-                <span className="text-stone-300">Quack</span>
+                <span className={isDark ? 'text-stone-300' : 'text-stone-700'}>Quack</span>
                 <span className="text-yellow-400">Stack</span>
               </span>
             </div>
-            <p className="text-stone-400 text-sm leading-relaxed">
+            <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-sm leading-relaxed`}>
               Turn your codebase into a <span className="text-yellow-400">conversation</span>
             </p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-stone-300 font-medium text-sm">Links</h3>
+            <h3 className={`${isDark ? 'text-stone-300' : 'text-stone-700'} font-medium text-sm`}>Links</h3>
             <div className="flex flex-col space-y-3">
-              <a href="#features" className="text-stone-500 hover:text-yellow-400 transition-colors text-sm">
+              <a href="#features" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
                 Features
               </a>
-              <a href="/documentation" className="text-stone-500 hover:text-yellow-400 transition-colors text-sm">
+              <a href="/documentation" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
                 Documentation
               </a>
-              <a href="https://github.com/woustachemax/QuackStack" target="_blank" rel="noopener noreferrer" className="text-stone-500 hover:text-yellow-400 transition-colors text-sm">
+              <a href="https://github.com/woustachemax/QuackStack" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
                 GitHub
               </a>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-stone-300 font-medium text-sm">Connect</h3>
+            <h3 className={`${isDark ? 'text-stone-300' : 'text-stone-700'} font-medium text-sm`}>Connect</h3>
             <div className="flex space-x-3">
               <a 
                 href="https://github.com/woustachemax" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-stone-500 hover:text-yellow-400 transition-colors"
+                className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors`}
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -68,7 +68,7 @@ export const Footer = () => {
                 href="https://www.linkedin.com/in/sidthakkar/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-stone-500 hover:text-yellow-400 transition-colors"
+                className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors`}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -76,16 +76,42 @@ export const Footer = () => {
                 href="https://x.com/woustachemax7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-stone-500 hover:text-yellow-400 transition-colors"
+                className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors`}
               >
                 <XIcon />
               </a>
             </div>
+            
+            <div className="pt-2">
+              <div className={`inline-flex items-center gap-1 ${isDark ? 'bg-stone-800' : 'bg-stone-200'} rounded-full p-1 transition-colors duration-300`}>
+                <button
+                  onClick={() => setIsDark(true)}
+                  className={`relative p-1.5 rounded-full transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-stone-700 text-yellow-400' 
+                      : 'text-stone-500 hover:text-stone-700'
+                  }`}
+                  aria-label="Dark mode"
+                >
+                  <Moon className="h-3.5 w-3.5" />
+                </button>
+                <button
+                  onClick={() => setIsDark(false)}
+                  className={`relative p-1.5 rounded-full transition-all duration-300 ${
+                    !isDark 
+                      ? 'bg-stone-300 text-yellow-500' 
+                      : 'text-stone-500 hover:text-stone-400'
+                  }`}
+                  aria-label="Light mode"
+                >
+                  <Sun className="h-3.5 w-3.5" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-stone-600 text-xs">
+        <div className={`flex flex-col sm:flex-row justify-between items-center gap-4 ${isDark ? 'text-stone-600' : 'text-stone-500'} text-xs`}>
           <p>© {new Date().getFullYear()} QuackStack</p>
           <p className="flex items-center gap-1">
             Built with <span className="text-red-500">❤️</span> by{' '}
@@ -93,7 +119,7 @@ export const Footer = () => {
               href="https://www.siddharththakkar.xyz/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-stone-500 hover:text-yellow-400 transition-colors"
+              className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors`}
             >
               Siddharth
             </a>
