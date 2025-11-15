@@ -13,9 +13,8 @@ export default function ThemeScript() {
             } else if (saved === 'light') {
               document.documentElement.classList.remove('dark');
             } else {
-              // Default: system preference
-              const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              document.documentElement.classList.toggle('dark', systemDark);
+              // Default: always dark
+              document.documentElement.classList.add('dark');
             }
           })();
         `,

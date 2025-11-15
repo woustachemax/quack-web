@@ -19,9 +19,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       setMode(saved)
       setIsDarkState(saved === 'dark')
     } else {
-      setMode('system')
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      setIsDarkState(systemDark)
+      setMode('dark')
+      setIsDarkState(true)
     }
   }, [])
 
