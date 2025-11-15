@@ -90,7 +90,7 @@ export function DocsSidebar({ activeSection, setActiveSection }: { activeSection
       <SidebarHeader className={`p-6 border-b ${isDark ? 'border-stone-800! bg-stone-900!' : 'border-stone-300! bg-stone-100!'}`}>
         <div className="flex items-center space-x-2 group cursor-pointer"
         onClick={()=>window.location.href='/'}>
-          <img src='/logo.svg' alt='Logo' className='h-6 w-6 sm:h-8 sm:w-8'/>
+          <img src={`${isDark?'/logo.svg':'/light-logo.svg'}`} alt='Logo' className='h-6 w-6 sm:h-8 sm:w-8'/>
           <span className="text-lg sm:text-xl font-medium">
             <span className={isDark ? 'text-stone-300!' : 'text-stone-700!'}>Quack</span>
             <span className={isDark ? 'text-yellow-400!' : 'text-yellow-600!'}>Stack</span>
