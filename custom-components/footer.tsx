@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
           <div className="space-y-4">
             <div className="flex items-center space-x-1 group cursor-pointer">
-              <img src='/logo.svg' alt='Logo' className='h-8 w-8'/>
+              <img src={`${isDark? '/logo.svg' :'light-logo.svg'}`} alt='Logo' className='h-8 w-8'/>
               <span className="text-xl font-medium">
                 <span className={isDark ? 'text-stone-300' : 'text-stone-700'}>Quack</span>
                 <span className="text-yellow-400">Stack</span>

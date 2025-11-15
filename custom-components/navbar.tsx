@@ -14,7 +14,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           <div className="flex items-center space-x-1 group cursor-pointer">
             <div>
-              <img src='/logo.svg' alt='Logo' className='h-6 w-6 sm:h-8 sm:w-8'/>
+              <img src={`${isDark? '/logo.svg':'/light-logo.svg'}`} alt='Logo' className='h-6 w-6 sm:h-8 sm:w-8'/>
             </div>
             <span className="text-lg sm:text-xl md:text-2xl font-medium">
               <span className={isDark ? 'text-neutral-300' : 'text-stone-700'}>Quack</span>

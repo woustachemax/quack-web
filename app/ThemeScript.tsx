@@ -6,15 +6,20 @@ export default function ThemeScript() {
       dangerouslySetInnerHTML={{
         __html: `
           (function() {
-            const theme = localStorage.getItem('quackstack-theme');
-            if (theme === 'dark') {
+            const saved = localStorage.getItem('quackstack-theme');
+
+            if (saved === 'dark') {
               document.documentElement.classList.add('dark');
-            } else if (theme === 'light') {
+            } else if (saved === 'light') {
               document.documentElement.classList.remove('dark');
+            } else {
+              // Default: system preference
+              const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              document.documentElement.classList.toggle('dark', systemDark);
             }
           })();
         `,
       }}
     />
-  )
+  );
 }
