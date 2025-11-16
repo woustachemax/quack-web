@@ -148,7 +148,7 @@ export function DocsSidebar({ activeSection, setActiveSection }: { activeSection
           >
             <span className="text-sm">Press</span>
             <kbd className={`text-xs px-1.5 py-0.5 rounded ${isDark ? 'bg-stone-700 text-stone-400' : 'bg-stone-200 text-stone-600'}`}>
-              ⌘K
+              ⌘ + K
             </kbd>
             <span className="text-sm">to search</span>
           </button>
