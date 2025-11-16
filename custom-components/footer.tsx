@@ -81,33 +81,7 @@ export default function Footer() {
                 <XIcon />
               </a>
             </div>
-            
-            <div className="pt-2">
-              <div className={`inline-flex items-center gap-1 ${isDark ? 'bg-stone-800' : 'bg-stone-200'} rounded-full p-1 transition-colors duration-300`}>
-                <button
-                  onClick={() => setIsDark(true)}
-                  className={`relative p-1.5 rounded-full transition-all duration-300 ${
-                    isDark 
-                      ? 'bg-stone-700 text-yellow-400' 
-                      : 'text-stone-500 hover:text-stone-700'
-                  }`}
-                  aria-label="Dark mode"
-                >
-                  <Moon className="h-3.5 w-3.5" />
-                </button>
-                <button
-                  onClick={() => setIsDark(false)}
-                  className={`relative p-1.5 rounded-full transition-all duration-300 ${
-                    !isDark 
-                      ? 'bg-stone-300 text-yellow-500' 
-                      : 'text-stone-500 hover:text-stone-400'
-                  }`}
-                  aria-label="Light mode"
-                >
-                  <Sun className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
+           
           </div>
         </div>
 
