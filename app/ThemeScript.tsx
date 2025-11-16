@@ -7,13 +7,9 @@ export default function ThemeScript() {
         __html: `
           (function() {
             const saved = localStorage.getItem('quackstack-theme');
-
-            if (saved === 'dark') {
-              document.documentElement.classList.add('dark');
-            } else if (saved === 'light') {
+            if (saved === 'light') {
               document.documentElement.classList.remove('dark');
             } else {
-              // Default: always dark
               document.documentElement.classList.add('dark');
             }
           })();
