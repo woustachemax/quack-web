@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import { ChevronRight, Home, BookOpen, Settings, Terminal, Sparkles, Code, Search, X } from 'lucide-react'
 import {
   Sidebar,
@@ -43,7 +43,8 @@ const sections = [
       { id: 'context', title: 'Context Generation' },
       { id: 'watch', title: 'Watch Mode' },
       {id: 'readme', title: 'Generate README' },
-      { id: 'reindex', title: 'Reindexing' }
+      { id: 'reindex', title: 'Reindexing' },
+      {id:'provider', title: 'Providers'}
     ]
   },
   {

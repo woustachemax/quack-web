@@ -1,4 +1,3 @@
-import React from 'react'
 import { Terminal, Eye, RefreshCw, Sparkles, FileText } from 'lucide-react'
 import { CodeBlock } from './code-block'
 import { useTheme } from '@/contexts/ThemeContext' 
@@ -427,6 +426,124 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
         </div>
       </div>
     ),
+    provider: (
+  <div className="space-y-6">
+    <div className="space-y-3">
+      <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>AI Provider Selection</h2>
+      <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Choose your preferred AI provider and model for code analysis.</p>
+    </div>
+    
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>List Available Options</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>See all configured providers and their models:</p>
+        
+        <CodeBlock code="quack --list-models" />
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Choose Provider</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Start QuackStack with a specific provider:</p>
+        
+        <div className="space-y-3">
+          <CodeBlock code="quack -p openai" />
+          <CodeBlock code="quack -p anthropic" />
+          <CodeBlock code="quack -p gemini" />
+          <CodeBlock code="quack -p deepseek" />
+          <CodeBlock code="quack -p mistral" />
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Choose Specific Model</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Use a specific model from any provider:</p>
+        
+        <div className="space-y-3">
+          <CodeBlock code="quack -m gpt-4o" />
+          <CodeBlock code="quack -m claude-opus-4-20250514" />
+          <CodeBlock code="quack -m gemini-1.5-pro" />
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Combine Provider and Model</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Specify both for complete control:</p>
+        
+        <CodeBlock code="quack -p anthropic -m claude-sonnet-4-20250514" />
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Switch During Session</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Change provider or model while in the REPL:</p>
+        
+        <div className={`${isDark ? 'bg-stone-900 border-stone-800' : 'bg-white border-stone-300'} rounded-lg border overflow-hidden`}>
+          <div className={`flex items-center justify-between px-3 sm:px-4 py-2 ${isDark ? 'bg-stone-800/80 border-stone-800' : 'bg-stone-100 border-stone-300'} border-b`}>
+            <div className="flex space-x-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>terminal</span>
+          </div>
+          
+          <div className="p-4 font-mono text-xs sm:text-sm space-y-3">
+            <div className="flex items-start">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>🐥 quack &gt;</span>
+              <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>/provider anthropic</span>
+            </div>
+            
+            <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>
+               Switched to: Anthropic - claude-sonnet-4-20250514
+            </div>
+            
+            <div className="flex items-start pt-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>🐥 quack &gt;</span>
+              <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>/model gpt-4o</span>
+            </div>
+            
+            <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>
+               Switched to: OpenAI - gpt-4o
+            </div>
+            
+            <div className="flex items-start pt-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>🐥 quack &gt;</span>
+              <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>/help</span>
+            </div>
+            
+            <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'} space-y-1`}>
+              <div>📖 Available Commands:</div>
+              <div className="ml-4">
+                <div>/model, /m [model]    Show or change model</div>
+                <div>/provider, /p [name]  Show or change provider</div>
+                <div>/help, /h             Show this help</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Default Behavior</h3>
+        
+        <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+          <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+            If you don't specify a provider or model, QuackStack will automatically use the first available provider based on your configured API keys, with its default model.
+          </p>
+        </div>
+      </div>
+
+      <div className={`${isDark ? 'bg-green-400/10 border-green-400/30' : 'bg-green-400/20 border-green-500/40'} border rounded-lg p-4`}>
+        <div className="flex items-start space-x-3">
+          <Sparkles className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} mt-0.5 shrink-0`} />
+          <div>
+            <p className={`font-semibold ${isDark ? 'text-green-300' : 'text-green-700'}`}>Pro Tip</p>
+            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>Compare responses across different models! Try the same question with GPT-4o, Claude Opus, and Gemini to see which one gives you the best answer for your specific use case.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+),
   }
 
   return content[activeSection] || null
