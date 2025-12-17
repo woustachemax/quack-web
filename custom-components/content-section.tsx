@@ -180,7 +180,7 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
 
   const coreConcepts = ['how-it-works', 'local-embeddings', 'database']
   const commands = ['interactive', 'context', 'watch', 'readme', 'reindex', 'provider']
-  const aiProviders = ['openai', 'claude', 'gemini', 'deepseek', 'mistral']
+  const aiProviders = ['openai', 'claude', 'gemini', 'grok', 'deepseek', 'mistral']
   const integrations = ['cursor', 'windsurf', 'cline', 'continue', 'aider']
   const advanced = ['multiple-projects', 'performance', 'troubleshooting']
 
