@@ -55,7 +55,7 @@ const sections = [
       { id: 'openai', title: 'OpenAI' },
       { id: 'claude', title: 'Anthropic Claude' },
       { id: 'gemini', title: 'Google Gemini' },
-      {id: 'grok', title:'Grok by XAI'},
+      {id: 'grok', title:'xAI Grok'},
       { id: 'deepseek', title: 'DeepSeek' },
       { id: 'mistral', title: 'Mistral AI' }
     ]
