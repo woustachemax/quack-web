@@ -41,7 +41,7 @@ const sections = [
     subsections: [
       { id: 'interactive', title: 'Interactive Mode' },
       { id: 'context', title: 'Context Generation' },
-      {id: 'agent', title: 'Generate Agent.md'},
+      {id: 'agent', title: 'Generate AGENTS.md'},
       { id: 'watch', title: 'Watch Mode' },
       {id: 'readme', title: 'Generate README.md' },
       { id: 'reindex', title: 'Reindexing' },

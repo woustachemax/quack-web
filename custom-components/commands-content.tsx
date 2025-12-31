@@ -224,24 +224,24 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
     agent: (
   <div className="space-y-6">
     <div className="space-y-3">
-      <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Agent.md Generation</h2>
+      <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>AGENTS.md Generation</h2>
       <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Transform your codebase into an AI agent configuration following the agents.md specification.</p>
     </div>
     
     <div className="space-y-8">
       <div className="space-y-4">
-        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Generate Agent.md</h3>
-        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Create an agent.md file that describes your codebase as an AI agent:</p>
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Generate AGENTS.md</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Create an AGENTS.md file that describes your codebase as an AI agent:</p>
         
         <CodeBlock code="quack --agent" />
       </div>
 
       <div className="space-y-4">
-        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>What is agent.md?</h3>
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>What is AGENTS.md?</h3>
         
         <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
           <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
-            The <a href="https://agents.md/" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-yellow-400 hover:text-yellow-300' : 'text-yellow-600 hover:text-yellow-700'} underline`}>agents.md specification</a> is a standardized format for describing AI agents. QuackStack analyzes your entire codebase and generates a comprehensive agent.md file that documents your project as an intelligent, queryable agent.
+            The <a href="https://agents.md/" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-yellow-400 hover:text-yellow-300' : 'text-yellow-600 hover:text-yellow-700'} underline`}>agents.md specification</a> is a standardized format for describing AI agents. QuackStack analyzes your entire codebase and generates a comprehensive AGENTS.md file that documents your project as an intelligent, queryable agent.
           </p>
         </div>
       </div>
@@ -325,9 +325,9 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
         <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Overwrite Protection</h3>
         
         <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
-          <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>If agent.md already exists, QuackStack will ask for confirmation before overwriting:</p>
+          <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>If AGENTS.md already exists, QuackStack will ask for confirmation before overwriting:</p>
           <div className={`mt-3 font-mono text-xs ${isDark ? 'text-stone-300 bg-stone-900' : 'text-stone-700 bg-stone-50'} p-3 rounded`}>
-            <div>⚠️  agent.md already exists. Overwrite? (y/n):</div>
+            <div>⚠️  AGENTS.md already exists. Overwrite? (y/n):</div>
           </div>
         </div>
       </div>
@@ -337,7 +337,7 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
           <Sparkles className={`w-5 h-5 ${isDark ? 'text-purple-400' : 'text-purple-600'} mt-0.5 shrink-0`} />
           <div>
             <p className={`font-semibold ${isDark ? 'text-purple-300' : 'text-purple-700'}`}>AI Agent Standard</p>
-            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>The agent.md format is designed to make your codebase discoverable and usable by AI systems. It's like giving your project a structured API for AI interactions!</p>
+            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>The AGENTS.md format is designed to make your codebase discoverable and usable by AI systems. It's like giving your project a structured API for AI interactions!</p>
           </div>
         </div>
       </div>
