@@ -221,7 +221,129 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
         </div>
       </div>
     ),
+    agent: (
+  <div className="space-y-6">
+    <div className="space-y-3">
+      <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Agent.md Generation</h2>
+      <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Transform your codebase into an AI agent configuration following the agents.md specification.</p>
+    </div>
+    
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Generate Agent.md</h3>
+        <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Create an agent.md file that describes your codebase as an AI agent:</p>
+        
+        <CodeBlock code="quack --agent" />
+      </div>
 
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>What is agent.md?</h3>
+        
+        <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+          <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+            The <a href="https://agents.md/" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-yellow-400 hover:text-yellow-300' : 'text-yellow-600 hover:text-yellow-700'} underline`}>agents.md specification</a> is a standardized format for describing AI agents. QuackStack analyzes your entire codebase and generates a comprehensive agent.md file that documents your project as an intelligent, queryable agent.
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>What Gets Generated?</h3>
+        
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Agent Metadata</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Name, description, version, author</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Capabilities</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Features, operations, API endpoints</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Technologies</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Languages, frameworks, databases</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Configuration</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Environment variables, API keys</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Usage Examples</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Commands, API calls, operations</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Context & Knowledge</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Domain expertise, architecture</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Constraints</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Limitations, security notes</p>
+          </div>
+
+          <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+            <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>Tools & Integrations</h4>
+            <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>External tools, CLI commands</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Smart Analysis</h3>
+        
+        <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+          <ul className={`space-y-2 text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+            <li className="flex items-start gap-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>•</span>
+              <span><strong>Auto-detects technologies:</strong> TypeScript, React, Prisma, Express, FastAPI, PostgreSQL, and 20+ more</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>•</span>
+              <span><strong>Extracts API endpoints:</strong> Finds REST routes from Express, FastAPI, Flask frameworks</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>•</span>
+              <span><strong>Discovers data models:</strong> Identifies Prisma schemas, TypeScript interfaces, Python classes</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>•</span>
+              <span><strong>Analyzes patterns:</strong> Detects async/await, OOP, functional programming styles</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>•</span>
+              <span><strong>Maps dependencies:</strong> Catalogs external tools, APIs, and integrations</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Overwrite Protection</h3>
+        
+        <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+          <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>If agent.md already exists, QuackStack will ask for confirmation before overwriting:</p>
+          <div className={`mt-3 font-mono text-xs ${isDark ? 'text-stone-300 bg-stone-900' : 'text-stone-700 bg-stone-50'} p-3 rounded`}>
+            <div>⚠️  agent.md already exists. Overwrite? (y/n):</div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`${isDark ? 'bg-purple-400/10 border-purple-400/30' : 'bg-purple-400/20 border-purple-500/40'} border rounded-lg p-4`}>
+        <div className="flex items-start space-x-3">
+          <Sparkles className={`w-5 h-5 ${isDark ? 'text-purple-400' : 'text-purple-600'} mt-0.5 shrink-0`} />
+          <div>
+            <p className={`font-semibold ${isDark ? 'text-purple-300' : 'text-purple-700'}`}>AI Agent Standard</p>
+            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>The agent.md format is designed to make your codebase discoverable and usable by AI systems. It's like giving your project a structured API for AI interactions!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+),
     readme: (
       <div className="space-y-6">
         <div className="space-y-3">
