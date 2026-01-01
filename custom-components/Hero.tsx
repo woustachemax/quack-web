@@ -77,7 +77,7 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center max-w-md mx-auto mt-4">
-          <button onClick={()=> window.location.href='/documentation'}
+          <button onClick={()=> window.location.href='/docs'}
             className={`group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-yellow-400/20 hover:bg-yellow-400/30 border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300' : 'bg-yellow-400/30 hover:bg-yellow-400/40 border-yellow-500/40 hover:border-yellow-500/60 text-yellow-600'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}>
             <span>Get Started</span>
             <Terminal className="w-4 h-4"/>
