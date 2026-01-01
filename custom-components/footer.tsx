@@ -44,8 +44,8 @@ export default function Footer() {
               <a href="#features" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
                 Features
               </a>
-              <a href="/documentation" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
-                Documentation
+              <a href="/docs" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
+                Docs
               </a>
               <a href="https://github.com/woustachemax/QuackStack" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-stone-500 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors text-sm`}>
                 GitHub
