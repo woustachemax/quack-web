@@ -7,6 +7,7 @@ import { CommandsContent } from './commands-content'
 import { AIProvidersContent } from './ai-providers-content'
 import { IntegrationsContent } from './integrations-content'
 import { AdvancedUsageContent } from './advanced-usage-content'
+import { GitCommandsContent } from './git-commands'
 import { SimpleCodeBlock } from './simpler-code-block'
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -66,14 +67,14 @@ export function ContentSection({ activeSection }: { activeSection: string }) {
                 <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>Neon</h4>
                 <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Serverless Postgres with generous free tier</p>
                 <a href="https://neon.tech" target="_blank" className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm hover:underline mt-2 inline-block`}>
-                  Get started 
+                  Get started →
                 </a>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800 hover:border-yellow-400/30' : 'bg-stone-100/50 border-stone-300 hover:border-yellow-500/40'} border rounded-lg p-4 transition-colors`}>
                 <h4 className={`font-semibold ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>Supabase</h4>
                 <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Open source Firebase alternative with Postgres</p>
                 <a href="https://supabase.com" target="_blank" className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm hover:underline mt-2 inline-block`}>
-                  Get started 
+                  Get started →
                 </a>
               </div>
             </div>
@@ -183,6 +184,7 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
   const aiProviders = ['openai', 'claude', 'gemini', 'grok', 'deepseek', 'mistral']
   const integrations = ['cursor', 'windsurf', 'cline', 'continue', 'aider']
   const advanced = ['multiple-projects', 'performance', 'troubleshooting']
+  const gitCommands = ['authors', 'recent', 'gitInfo']
 
   if (coreConcepts.includes(activeSection)) {
     return <CoreConceptsContent activeSection={activeSection} />
@@ -202,6 +204,10 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
   
   if (advanced.includes(activeSection)) {
     return <AdvancedUsageContent activeSection={activeSection} />
+  }
+
+  if (gitCommands.includes(activeSection)) {
+    return <GitCommandsContent activeSection={activeSection} />
   }
 
   return gettingStartedContent[activeSection] || gettingStartedContent.installation

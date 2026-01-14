@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react'
-import { ChevronRight, Home, BookOpen, Settings, Terminal, Sparkles, Code, Search, X } from 'lucide-react'
+import { ChevronRight, Home, BookOpen, Settings, Terminal, Sparkles, Code, Search, X, GitBranch } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -48,6 +48,16 @@ const sections = [
       {id:'provider', title: 'Providers'}
     ]
   },
+  {
+  id: 'git-commands',
+  title: 'Git Commands',
+  icon: GitBranch,
+  subsections: [
+    { id: 'authors', title: 'Contributor Stats' },
+    { id: 'recent', title: 'Recent Changes' },
+    { id: 'gitInfo', title: 'Repository Info' }
+  ]
+},
   {
     id: 'ai-providers',
     title: 'AI Providers',
