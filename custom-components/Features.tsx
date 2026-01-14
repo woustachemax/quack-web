@@ -43,22 +43,32 @@ export const Features = () => {
     {
       title: "Interactive Code Chat",
       cmd: "quack",
-      desc: "Start a conversational session with your codebase. Ask questions in natural language and get instant answers with relevant code snippets. Understanding complex logic, finding implementations, or exploring unfamiliar code becomes as easy as having a conversation. The REPL stays open until you're done, maintaining full context across multiple questions."
+      desc: "Ask questions about your codebase in plain English and get instant answers with actual code snippets. The REPL stays open so you can keep asking follow-ups without losing context. It's like pair programming with someone who's read your entire repo."
     },
     {
-      title: "Universal AI Context Generation",
+      title: "Universal AI Context",
       cmd: "quack --context",
-      desc: "Generate intelligent context files for all major AI coding assistants in one command. Creates .cursorrules, .windsurfrules, .clinerules, and more with deep architectural insights about your project. Your AI tools will understand your codebase structure, patterns, dependencies, and design decisions without you having to explain anything."
+      desc: "Generate context files for Cursor, Windsurf, Cline, Continue, and Aider all at once. Your AI tools instantly understand your architecture, patterns, and dependencies without you explaining anything. One command, five tools, zero manual setup."
+    },
+    {
+      title: "Auto-Generate Docs",
+      cmd: "quack --readme",
+      desc: "Create a professional README.md directly from your actual code. Detects your tech stack, finds entry points, extracts features. No more outdated docs that lie about what your code actually does."
     },
     {
       title: "Live Context Sync",
       cmd: "quack --watch",
-      desc: "Keep your AI assistants synchronized with your codebase in real-time. Automatically detects file changes and regenerates context files so Cursor, Windsurf, and other tools always have up-to-date knowledge of your project. Run it in the background during development and never worry about stale context again."
+      desc: "Auto-update context files as you code. Run it in the background and your AI assistants always have fresh knowledge of your project. Change a file, context updates automatically. No stale info, ever."
     },
     {
-      title: "Full Command Reference",
-      cmd: "quack --help",
-      desc: "See all available commands, flags, and options at a glance. Get quick documentation on usage patterns, example queries, and configuration options without leaving your terminal. Perfect for discovering advanced features or refreshing your memory on command syntax when you need it."
+      title: "Git Intelligence",
+      cmd: "quack authors",
+      desc: "See who owns what code with commit counts, lines changed, and file ownership stats. Track recent changes across any time period or get a quick repo snapshot. Perfect for code reviews and catching up after time off."
+    },
+    {
+      title: "Choose Your AI",
+      cmd: "quack -p anthropic",
+      desc: "Use OpenAI, Claude, Gemini, Grok, DeepSeek, or Mistral for answers. Switch providers on the fly to compare responses. All embeddings stay 100% local, only your questions hit the API."
     }
   ]
 
@@ -80,7 +90,7 @@ export const Features = () => {
           </span>
           <span className={`inline-block w-0.5 h-8 sm:h-10 ${isDark ? 'bg-yellow-400' : 'bg-yellow-500'} ml-1 ${displayText.length === fullText.length ? 'animate-pulse' : ''}`}></span>
         </h2>
-        <p className={`${isDark ? 'text-stone-400/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-xl mx-auto`}>
+        <p className={`${isDark ? 'text-stone-400/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-2xl mx-auto`}>
           A few commands that make your repo talk back
         </p>
       </div>
