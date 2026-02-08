@@ -39,59 +39,78 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>$</span>
                   <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>quack</span>
                 </div>
-                
-                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'} space-y-1`}>
-                  <div>Welcome to QuackStack! 🐥</div>
-                  <div>🔍 Indexing your codebase (this may take a moment)...</div>
-                  <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>✅ Indexing complete!</div>
+
+                <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>
+                  <div>…………………………………………………………………………………………………………………………………………………………………………</div>
                 </div>
-                
-                <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs`}>💡 Tip: Press Ctrl+C to exit</div>
-                
+
+                <div className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>
+                  <pre className="whitespace-pre-wrap text-xs">{`   ██████╗ ██╗   ██╗ █████╗  ██████╗██╗  ██╗███████╗████████╗ █████╗  ██████╗██╗  ██╗
+   ██╔═══██╗██║   ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
+   ██║   ██║██║   ██║███████║██║     █████╔╝ ███████╗   ██║   ███████║██║     █████╔╝ 
+   ██║▄▄██║██║   ██║██╔══██║██║     ██╔═██╗ ╚════██║   ██║   ██╔══██║██║     ██╔═██╗ 
+   ╚██████╔╝╚██████╔╝██║  ██║╚██████╗██║  ██╗███████║   ██║   ██║  ██║╚██████╗██║  ██╗
+    ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝`}</pre>
+                </div>
+
+                <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>
+                  <div>…………………………………………………………………………………………………………………………………………………………………………</div>
+                </div>
+
+                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+                  <div>✨ Let&apos;s get started.</div>
+                </div>
+
+                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+                  <div>Using: OpenAI - gpt-5.3-codex</div>
+                  <div>💡 Tip: Type &apos;/help&apos; for commands or &apos;quack --list-models&apos; to see all options</div>
+                  <div>Press Ctrl+C to exit</div>
+                </div>
+
+                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+                  <div>Indexing your codebase...</div>
+                  <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>Indexing complete</div>
+                </div>
+
                 <div className="pt-2">
                   <div className="flex items-start">
-                    <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>🐥 Quack! How can I help?</span>
-                    <span className={`${isDark ? 'text-stone-400' : 'text-stone-600'} mx-2`}>&gt;</span>
-                    <span className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>how does authentication work?</span>
+                    <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>quack &gt;</span>
+                    <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>how does the search function work?</span>
                   </div>
                 </div>
-                
-                <div className={`${isDark ? 'text-stone-300 bg-stone-800/50' : 'text-stone-700 bg-stone-50'} p-3 rounded space-y-2`}>
-                  <p>Authentication is handled using JWT tokens. The auth middleware validates tokens in src/middleware/auth.ts and protects routes.</p>
-                  
-                  <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-2`}>
-                    <div>Key files:</div>
-                    <div>- src/middleware/auth.ts</div>
-                    <div>- src/routes/auth.routes.ts</div>
-                  </div>
+
+                <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'} space-y-2`}>
+                  <p>The search function uses local embeddings to convert your query into a vector,</p>
+                  <p>compares it against stored code embeddings using cosine similarity, ranks results,</p>
+                  <p>and feeds the top matches to the AI for a conversational answer.</p>
+                  <p></p>
+                  <p>Implementation is in src/commands/search.ts</p>
                 </div>
-                
-                <div className={`flex items-center ${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
-                  <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>💡 Want more details? (y/n)</span>
-                  <span className="mx-2">&gt;</span>
-                  <span className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>y</span>
+
+                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>
+                  <p>Want more details? (y/n) &gt; <span className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>n</span></p>
                 </div>
-                
-                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>📚 Relevant Code:</div>
-                
-                <div className={`${isDark ? 'bg-stone-800/50' : 'bg-stone-50'} p-3 rounded space-y-2`}>
-                  <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs`}>[1] src/middleware/auth.ts (relevance: 92.4%)</div>
-                  <pre className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs overflow-x-auto`}><code>{`export function authMiddleware(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1];
-  // ... token verification logic ...
-}`}</code>
-                  </pre>
-                </div>
-                
+
                 <div className="pt-2">
                   <div className="flex items-start">
-                    <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>🐥 Quack! How can I help?</span>
-                    <span className={`${isDark ? 'text-stone-400' : 'text-stone-600'} mx-2`}>&gt;</span>
-                    <span className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>^C</span>
+                    <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>quack &gt;</span>
+                    <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>who wrote the authentication system?</span>
                   </div>
                 </div>
-                
-                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>👋 Happy coding!</div>
+
+                <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'} space-y-2`}>
+                  <p>The authentication system was primarily written by Siddharth Thakkar, with the</p>
+                  <p>main implementation in app/api/auth/[...nextauth]/options.ts (last modified 187 days ago).</p>
+                </div>
+
+                <div className="pt-2">
+                  <div className="flex items-start">
+                    <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} shrink-0`}>quack &gt;</span>
+                    <span className={`ml-2 ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>^C</span>
+                  </div>
+                </div>
+
+                <div className={`${isDark ? 'text-stone-400' : 'text-stone-600'}`}>Happy coding!</div>
               </div>
             </div>
           </div>

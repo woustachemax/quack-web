@@ -69,13 +69,13 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
               <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                 <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-codex</span>
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
               </p>
               <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest specialized code model</p>
             </div>
             <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
               <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                 <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.2</span>
-                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
               </p>
               <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest GPT-5 model, best quality</p>
             </div>
@@ -218,13 +218,13 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
               <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                 <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4.6</span>
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
               </p>
               <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest Opus 4.6, most capable</p>
             </div>
             <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
               <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                 <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-sonnet-4.5</span>
-                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
               </p>
               <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest Sonnet 4.5, best balance</p>
             </div>
