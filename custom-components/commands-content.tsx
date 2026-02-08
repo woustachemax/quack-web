@@ -44,7 +44,7 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
                   <div>…………………………………………………………………………………………………………………………………………………………………………</div>
                 </div>
 
-                <div className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>
+                <div className={`${isDark ? 'text-yellow-400' : 'text-yellow-500'}`}>
                   <pre className="whitespace-pre-wrap text-xs">{`   ██████╗ ██╗   ██╗ █████╗  ██████╗██╗  ██╗███████╗████████╗ █████╗  ██████╗██╗  ██╗
    ██╔═══██╗██║   ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
    ██║   ██║██║   ██║███████║██║     █████╔╝ ███████╗   ██║   ███████║██║     █████╔╝ 
