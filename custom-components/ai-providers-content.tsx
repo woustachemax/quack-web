@@ -68,28 +68,70 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className="space-y-2">
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-codex</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.4</span>
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest specialized code model</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest GPT-5.4, best quality</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.4-pro</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.4 Pro, enhanced capabilities</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.4-thinking</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.4 with extended thinking</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-codex</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Specialized code model</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.2</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest GPT-5 model, best quality</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.2, high quality</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.2-pro</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.2 Pro variant</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.2-thinking</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.2 with extended thinking</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.2-instant</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Faster GPT-5 variant</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Faster GPT-5.2, lower latency</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.1</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.1 stable release</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>o3</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Advanced reasoning model</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>o3-pro</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>o3 Pro, maximum reasoning power</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -101,7 +143,25 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-4o</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-4 Optimized, multimodal</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-4o, multimodal</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-4o-mini</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Lightweight GPT-4o</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-4-turbo</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-4 Turbo, fast and capable</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-3.5-turbo</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Legacy model, fast and affordable</p>
               </div>
             </div>
             <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
