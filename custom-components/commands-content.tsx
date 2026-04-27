@@ -592,6 +592,7 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
           <CodeBlock code="quack -p gemini" />
           <CodeBlock code="quack -p deepseek" />
           <CodeBlock code="quack -p mistral" />
+          <CodeBlock code="quack -p grok" />
         </div>
       </div>
 
@@ -602,7 +603,8 @@ export function CommandsContent({ activeSection }: { activeSection: string }) {
         <div className="space-y-3">
           <CodeBlock code="quack -m gpt-4o" />
           <CodeBlock code="quack -m claude-opus-4-20250514" />
-          <CodeBlock code="quack -m gemini-1.5-pro" />
+          <CodeBlock code="quack -m gemini-2.5-pro" />
+          <CodeBlock code="quack -m grok-4" />
         </div>
       </div>
 
