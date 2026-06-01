@@ -17,25 +17,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="theme-script" strategy="beforeInteractive">
           {`
             try {
-              console.log("ThemeScript running…");
               const saved = localStorage.getItem('quackstack-theme');
-              console.log("Saved theme from localStorage:", saved);
-
-              if (saved === 'light') {
-                document.documentElement.classList.remove('dark');
-                console.log("Removing dark class (light mode)");
-              } else {
+              if (saved === 'dark') {
                 document.documentElement.classList.add('dark');
-                console.log("Adding dark class (default dark)");
+              } else {
+                document.documentElement.classList.remove('dark');
               }
-            } catch(e) {
-              console.error("Error in ThemeScript:", e);
-            }
+            } catch(e) {}
           `}
         </Script>
       </head>
 
-      <body className="font-serif bg-gray-900 text-white">
+      <body className="font-serif bg-stone-50 text-stone-900">
         <ThemeProvider>
           {children}
         </ThemeProvider>
