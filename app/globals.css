@@ -193,8 +193,39 @@ html {
   50% { transform: rotate(-4deg); }
 }
 
-.animate-tilt {
+.hover-tilt {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-tilt:hover {
   animation: tilt 1.2s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  to { background-position: 200% center; }
+}
+
+.gradient-hover {
+  background-size: 200% auto;
+  background-position: 0% center;
+}
+
+.gradient-hover:hover {
+  background-image: var(--btn-gradient);
+  animation: gradient-shift 2s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 @theme inline {

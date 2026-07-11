@@ -68,34 +68,34 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className="space-y-2">
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.5</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.6-terra</span>
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest GPT-5.5, best quality</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Balanced GPT-5.6 tier, best cost/quality for production</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.6-sol</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Frontier GPT-5.6 tier for the hardest problems</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.6-luna</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Fast, low-cost GPT-5.6 tier for high-volume work</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.5</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Previous-gen GPT-5.5</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.4</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.4, high quality</p>
-              </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.4-mini</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Smaller, faster GPT-5.4</p>
-              </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-codex</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Specialized code model</p>
-              </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-instant</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Fast GPT-5.3, lower latency</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -112,7 +112,7 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             </div>
             <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
               <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
-                💡 Switch models: <span className="font-mono">quack -m gpt-5.5</span> or use <span className="font-mono">/model gpt-5.4-mini</span> in REPL
+                💡 Switch models: <span className="font-mono">quack -m gpt-5.6-terra</span> or use <span className="font-mono">/model gpt-5.6-luna</span> in REPL
               </p>
             </div>
           </div>
@@ -223,16 +223,22 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className="space-y-2">
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-7</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-sonnet-5</span>
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest Opus 4.7, most capable</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Sonnet 5, most of Fable 5&apos;s coding capability at a fraction of the cost</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-sonnet-4-6</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-fable-5</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Sonnet 4.6, best balance</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Most capable Claude model, for the hardest escalations</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-8</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 4.8, tuned for honesty and reliability</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -242,32 +248,26 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-7</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 4.7 stable</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-sonnet-4-6</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Sonnet 4.6, best balance</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-6</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 4.6 variant</p>
               </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-sonnet-4-5-20250929</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Sonnet 4.5 preview</p>
-              </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-5-20251101</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 4.5 stable</p>
-              </div>
-              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
-                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-4-1-20250805</span>
-                </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 4.1 stable</p>
-              </div>
             </div>
             <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
               <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
-                💡 Switch models: <span className="font-mono">quack -p anthropic -m claude-opus-4-7</span>
+                💡 Switch models: <span className="font-mono">quack -p anthropic -m claude-sonnet-5</span>
               </p>
             </div>
           </div>
@@ -391,9 +391,9 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3-flash-preview</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.5-flash</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Preview version optimized for speed</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GA Flash model, frontier-level agentic and coding performance</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -639,7 +639,7 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>mistral-medium-3-1-25-08</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>mistral-medium-3-5-26-04</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Balanced performance</p>
               </div>
@@ -777,10 +777,16 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className="space-y-2">
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.20-reasoning</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.5</span>
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Most capable Grok model</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus-class, built for coding and agentic work</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.20-reasoning</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Previous-gen flagship Grok model</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -841,6 +847,126 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
           <div className={`${isDark ? 'bg-yellow-400/10 border-yellow-400/30' : 'bg-yellow-400/20 border-yellow-500/40'} border rounded-lg p-4`}>
             <p className={`${isDark ? 'text-yellow-300' : 'text-yellow-700'} text-sm font-semibold`}>⚡ Great for Fast Development</p>
             <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs mt-1`}>Perfect when you need quick, intelligent responses for coding tasks.</p>
+          </div>
+        </div>
+      </div>
+    ),
+
+    primeintellect: (
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Prime Intellect</h2>
+          <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Open models trained on distributed, community-contributed compute.</p>
+        </div>
+
+        <div className="space-y-8">
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <Zap className="w-4 h-4" />
+                <span className="text-xs font-semibold">SPEED</span>
+              </div>
+              <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>Fast</p>
+            </div>
+
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <DollarSign className="w-4 h-4" />
+                <span className="text-xs font-semibold">COST</span>
+              </div>
+              <p className={`${isDark ? 'text-green-300' : 'text-green-700'} text-sm font-semibold`}>Very Cheap</p>
+            </div>
+
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <Lock className="w-4 h-4" />
+                <span className="text-xs font-semibold">PRIVACY</span>
+              </div>
+              <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>Query only</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Setup</h3>
+
+            <div className="space-y-3">
+              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>1. Get your API key from Prime Intellect:</p>
+              <a
+                href="https://app.primeintellect.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 ${isDark ? 'text-yellow-400 hover:text-yellow-300' : 'text-yellow-600 hover:text-yellow-700'} text-sm`}
+              >
+                https://app.primeintellect.ai
+              </a>
+              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-xs`}>Settings → API Keys → generate a new key with Inference permissions enabled.</p>
+
+              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base mt-4`}>2. Add to your .env file:</p>
+              <SimpleCodeBlock code="QUACKSTACK_PRIMEINTELLECT_KEY=..." />
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Available Models</h3>
+            <div className="space-y-2">
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>prime-intellect/intellect-3</span>
+                  <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>106B MoE, RL-trained on math, code, science, and agentic tasks</p>
+              </div>
+            </div>
+            <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
+              <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
+                💡 Switch models: <span className="font-mono">quack -p primeintellect -m prime-intellect/intellect-3</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>About Embeddings</h3>
+            <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-4`}>
+              <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-sm font-semibold`}>💡 Local Embeddings Only</p>
+              <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs mt-2`}>
+                QuackStack uses <span className={`font-semibold ${isDark ? 'text-blue-300' : 'text-blue-600'}`}>local embeddings</span> to index your code on your machine. No separate embedding API needed! Prime Intellect is only used to generate answers from the code snippets we find.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Why Choose Prime Intellect?</h3>
+
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Open, Community-Trained</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>INTELLECT-3 is trained across a distributed GPU network, not one company&apos;s private cluster, and the weights are open</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Coding & Reasoning Focused</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>RL-trained specifically on math, code, science, and software engineering benchmarks</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Low Cost</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>Priced well below most closed-source frontier models</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={`${isDark ? 'bg-yellow-400/10 border-yellow-400/30' : 'bg-yellow-400/20 border-yellow-500/40'} border rounded-lg p-4`}>
+            <p className={`${isDark ? 'text-yellow-300' : 'text-yellow-700'} text-sm font-semibold`}>💰 Budget-Friendly, Open-Weight Choice</p>
+            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs mt-1`}>Good pick if you want an open, community-trained model without a big API bill.</p>
           </div>
         </div>
       </div>

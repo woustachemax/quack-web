@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -89,6 +89,41 @@ const DivGrid = ({
   interactive = true,
 }: DivGridProps) => {
   const cells = useMemo(() => Array.from({ length: rows * cols }, (_, idx) => idx), [rows, cols]);
+  const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    let activeEls: HTMLDivElement[] = [];
+    const BATCH_SIZE = 5;
+
+    const tick = () => {
+      activeEls.forEach((el) => { el.style.opacity = ""; });
+      activeEls = [];
+
+      const total = cellRefs.current.length;
+      const chosen = new Set<number>();
+      while (chosen.size < Math.min(BATCH_SIZE, total)) {
+        chosen.add(Math.floor(Math.random() * total));
+      }
+
+      chosen.forEach((idx) => {
+        const el = cellRefs.current[idx];
+        if (el) {
+          el.style.opacity = "0.92";
+          activeEls.push(el);
+        }
+      });
+
+      timeoutId = setTimeout(tick, 600 + Math.random() * 1400);
+    };
+
+    timeoutId = setTimeout(tick, 600 + Math.random() * 1400);
+
+    return () => {
+      clearTimeout(timeoutId);
+      activeEls.forEach((el) => { el.style.opacity = ""; });
+    };
+  }, [rows, cols]);
 
   const gridStyle: React.CSSProperties = {
     display: "grid",
@@ -119,6 +154,7 @@ const DivGrid = ({
         return (
           <div
             key={idx}
+            ref={(el) => { cellRefs.current[idx] = el; }}
             className={cn(
               "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
               clickedCell && "animate-cell-ripple [fill-mode:none]",

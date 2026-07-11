@@ -68,7 +68,8 @@ const sections = [
       { id: 'gemini', title: 'Google Gemini' },
       {id: 'grok', title:'xAI Grok'},
       { id: 'deepseek', title: 'DeepSeek' },
-      { id: 'mistral', title: 'Mistral AI' }
+      { id: 'mistral', title: 'Mistral AI' },
+      { id: 'primeintellect', title: 'Prime Intellect' }
     ]
   },
   {

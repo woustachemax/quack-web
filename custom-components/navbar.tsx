@@ -45,6 +45,8 @@ export const Navbar = () => {
           <div className='hidden md:flex items-center space-x-6 lg:space-x-8'>
             <a href="#features" className={`${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
               Features</a>
+            <a href="#providers" className={`${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
+              Providers</a>
             <a href="/docs" className={`${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
               Docs</a>
             
@@ -92,6 +94,9 @@ export const Navbar = () => {
             <a onClick={() => setMobileMenuOpen(false)}
               href="#features" className={`block ${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
               Features</a>
+            <a onClick={() => setMobileMenuOpen(false)}
+              href="#providers" className={`block ${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
+              Providers</a>
             <a onClick={() => setMobileMenuOpen(false)}
               href="/docs" className={`block ${isDark ? 'text-neutral-300 hover:text-yellow-400' : 'text-stone-600 hover:text-yellow-500'} transition-colors duration-200 text-sm lg:text-base`}>
               Docs</a>

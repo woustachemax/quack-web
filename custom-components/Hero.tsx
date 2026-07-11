@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
-import { Sparkles, Github, Copy, Check, Terminal } from "lucide-react"
+import { Github, Copy, Check, Terminal } from "lucide-react"
 import {BackgroundRippleEffect} from "@/components/ui/background-ripple-effect"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -47,43 +47,38 @@ export const Hero = () => {
   return (
     <section className={`relative min-h-screen flex flex-col items-center justify-center text-center pt-32 sm:pt-40 px-4 sm:px-6 lg:px-8 overflow-hidden ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}>
       <BackgroundRippleEffect className="absolute inset-0 -z-10"/>
-      <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 opacity-8 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #facc15 0%, transparent 70%)' }}
-      />
-      <div 
-        className="absolute bottom-0 right-0 w-96 h-96 opacity-6 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #eab308 0%, transparent 70%)' }}
-      />
 
       <div className="z-10 mb-6 text-center space-y-2">
-        <div className={`inline-flex items-center justify-center px-3 py-1 ${isDark ? 'bg-yellow-400/10 border-yellow-400/30 text-yellow-300' : 'bg-yellow-400/20 border-yellow-500/40 text-yellow-600'} border rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm shadow-sm hover:border-yellow-400/50 transition-all duration-300`}>
-          <Sparkles className="w-3 h-3 mr-1 text-yellow-400" />
-          <span>Introducing QuackStack</span>
-        </div>
-
         <div className="max-w-2xl mx-auto">
           <h1 className={`text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight ${isDark ? 'text-neutral-300/70' : 'text-stone-700/70'}`}>
             Your{" "}
-            <span className={`inline-block ${isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'} origin-center animate-tilt`}>
+            <span className={`inline-block cursor-pointer ${isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'} origin-center hover-tilt`}>
               cracked
             </span>{" "}
             unpaid intern for all things{" "}
             <span className={isDark ? 'text-yellow-400/60' : 'text-yellow-500/70'}>codebase related!</span>
           </h1>
           <p className={`mt-3 ${isDark ? 'text-neutral-200/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-xl mx-auto`}>
-            Your code's got something to say!
+            Your code&apos;s got something to say!
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center max-w-md mx-auto mt-4">
           <button onClick={()=> window.location.href='/docs'}
-            className={`group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-yellow-400/20 hover:bg-yellow-400/30 border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300' : 'bg-yellow-400/30 hover:bg-yellow-400/40 border-yellow-500/40 hover:border-yellow-500/60 text-yellow-600'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}>
+            className={`group gradient-hover w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-yellow-400/20 border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300' : 'bg-yellow-400/30 border-yellow-500/40 hover:border-yellow-500/60 text-yellow-600'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}
+            style={{ '--btn-gradient': isDark
+              ? 'linear-gradient(90deg, rgba(253,224,71,0.12), rgba(234,179,8,0.2), rgba(254,240,138,0.12), rgba(234,179,8,0.2), rgba(253,224,71,0.12))'
+              : 'linear-gradient(90deg, rgba(202,138,4,0.1), rgba(234,179,8,0.16), rgba(161,98,7,0.1), rgba(234,179,8,0.16), rgba(202,138,4,0.1))'
+            } as React.CSSProperties}>
             <span>Get Started</span>
             <Terminal className="w-4 h-4"/>
           </button>
           <button onClick={()=> window.open('https://github.com/woustachemax/QuackStack')}
-            className={`group w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-stone-800/50 hover:bg-stone-800/70 border-stone-700 hover:border-stone-600 text-neutral-200' : 'bg-stone-200/50 hover:bg-stone-200/70 border-stone-300 hover:border-stone-400 text-stone-700'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}>
+            className={`group gradient-hover w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-stone-800/50 border-stone-700 hover:border-stone-600 text-neutral-200' : 'bg-stone-200/50 border-stone-300 hover:border-stone-400 text-stone-700'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}
+            style={{ '--btn-gradient': isDark
+              ? 'linear-gradient(90deg, rgba(214,211,209,0.12), rgba(168,162,158,0.22), rgba(231,229,228,0.12), rgba(168,162,158,0.22), rgba(214,211,209,0.12))'
+              : 'linear-gradient(90deg, rgba(87,83,78,0.1), rgba(120,113,108,0.18), rgba(68,64,60,0.1), rgba(120,113,108,0.18), rgba(87,83,78,0.1))'
+            } as React.CSSProperties}>
             <span>Contribute</span>
             <Github className="w-4 h-4"/>
           </button>

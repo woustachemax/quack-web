@@ -68,7 +68,7 @@ export const Features = () => {
     {
       title: "Choose Your AI",
       cmd: "quack -p anthropic",
-      desc: "Use OpenAI, Claude, Gemini, Grok, DeepSeek, or Mistral for answers. Switch providers on the fly to compare responses. All embeddings stay 100% local, only your questions hit the API."
+      desc: "Use OpenAI, Claude, Gemini, Grok, DeepSeek, Mistral, or Prime Intellect for answers. Switch providers on the fly to compare responses. All embeddings stay 100% local, only your questions hit the API."
     }
   ]
 
@@ -85,9 +85,11 @@ export const Features = () => {
     >
       <div className="text-center mb-12 sm:mb-16">
         <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-stone-300/70' : 'text-stone-700/70'} mb-3`}>
+          <span>{displayText.substring(0, 5)}</span>
           <span className={isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'}>
-            {displayText}
+            {displayText.substring(5, 15)}
           </span>
+          <span>{displayText.substring(15)}</span>
           <span className={`inline-block w-0.5 h-8 sm:h-10 ${isDark ? 'bg-yellow-400' : 'bg-yellow-500'} ml-1 ${displayText.length === fullText.length ? 'animate-pulse' : ''}`}></span>
         </h2>
         <p className={`${isDark ? 'text-stone-400/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-2xl mx-auto`}>
