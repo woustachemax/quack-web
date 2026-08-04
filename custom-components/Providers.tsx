@@ -1,6 +1,6 @@
 'use client'
 import type { ComponentType, SVGProps } from "react"
-import { OpenAI, Anthropic, Gemini, Grok, DeepSeek, Mistral } from "@lobehub/icons"
+import { OpenAI, Anthropic, Gemini, Grok, DeepSeek, Mistral, Moonshot } from "@lobehub/icons"
 import { useTheme } from "@/contexts/ThemeContext"
 import { PrimeIntellectIcon } from "@/custom-components/icons/PrimeIntellectIcon"
 
@@ -17,6 +17,7 @@ const providers: ProviderEntry[] = [
   { name: "DeepSeek", Icon: DeepSeek },
   { name: "Mistral", Icon: Mistral },
   { name: "Prime Intellect", Icon: PrimeIntellectIcon },
+  { name: "Moonshot AI", Icon: Moonshot },
 ]
 
 const ProviderMark = ({ Icon, isDark }: ProviderEntry & { isDark: boolean }) => (

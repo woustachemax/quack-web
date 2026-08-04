@@ -69,7 +69,8 @@ const sections = [
       {id: 'grok', title:'xAI Grok'},
       { id: 'deepseek', title: 'DeepSeek' },
       { id: 'mistral', title: 'Mistral AI' },
-      { id: 'primeintellect', title: 'Prime Intellect' }
+      { id: 'primeintellect', title: 'Prime Intellect' },
+      { id: 'moonshot', title: 'Moonshot AI' }
     ]
   },
   {

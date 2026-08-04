@@ -68,7 +68,7 @@ export const Features = () => {
     {
       title: "Choose Your AI",
       cmd: "quack -p anthropic",
-      desc: "Use OpenAI, Claude, Gemini, Grok, DeepSeek, Mistral, or Prime Intellect for answers. Switch providers on the fly to compare responses. All embeddings stay 100% local, only your questions hit the API."
+      desc: "Use OpenAI, Claude, Gemini, Grok, DeepSeek, Mistral, Prime Intellect, or Moonshot AI for answers. Switch providers on the fly to compare responses. All embeddings stay 100% local, only your questions hit the API."
     }
   ]
 

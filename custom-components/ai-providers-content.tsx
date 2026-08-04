@@ -87,6 +87,12 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.3-codex</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GPT-5.3 tuned for agentic coding</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gpt-5.5</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Previous-gen GPT-5.5</p>
@@ -806,6 +812,12 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Fast inference without reasoning</p>
               </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-code-fast-1</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Fast, lightweight model for agentic coding</p>
+              </div>
             </div>
             <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
               <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
@@ -967,6 +979,127 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
           <div className={`${isDark ? 'bg-yellow-400/10 border-yellow-400/30' : 'bg-yellow-400/20 border-yellow-500/40'} border rounded-lg p-4`}>
             <p className={`${isDark ? 'text-yellow-300' : 'text-yellow-700'} text-sm font-semibold`}>💰 Budget-Friendly, Open-Weight Choice</p>
             <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs mt-1`}>Good pick if you want an open, community-trained model without a big API bill.</p>
+          </div>
+        </div>
+      </div>
+    ),
+
+    moonshot: (
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Moonshot AI</h2>
+          <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Kimi models with strong long-context and coding performance.</p>
+        </div>
+
+        <div className="space-y-8">
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <Zap className="w-4 h-4" />
+                <span className="text-xs font-semibold">SPEED</span>
+              </div>
+              <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>Fast</p>
+            </div>
+
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <DollarSign className="w-4 h-4" />
+                <span className="text-xs font-semibold">COST</span>
+              </div>
+              <p className={`${isDark ? 'text-green-300' : 'text-green-700'} text-sm font-semibold`}>Very Cheap</p>
+            </div>
+
+            <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+              <div className={`flex items-center gap-2 ${isDark ? 'text-yellow-400' : 'text-yellow-600'} mb-2`}>
+                <Lock className="w-4 h-4" />
+                <span className="text-xs font-semibold">PRIVACY</span>
+              </div>
+              <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>Query only</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Setup</h3>
+
+            <div className="space-y-3">
+              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>1. Get your API key from Moonshot AI:</p>
+              <a
+                href="https://platform.moonshot.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 ${isDark ? 'text-yellow-400 hover:text-yellow-300' : 'text-yellow-600 hover:text-yellow-700'} text-sm`}
+              >
+                https://platform.moonshot.ai
+              </a>
+
+              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base mt-4`}>2. Add to your .env file:</p>
+              <SimpleCodeBlock code="QUACKSTACK_MOONSHOT_KEY=sk-..." />
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Available Models</h3>
+            <div className="space-y-2">
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>kimi-k3</span>
+                  <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latest flagship Kimi model</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>kimi-k2.7-code</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Kimi K2.7 tuned for coding tasks</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>kimi-k2.6</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Previous-gen Kimi K2.6</p>
+              </div>
+            </div>
+            <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
+              <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
+                💡 Switch models: <span className="font-mono">quack -p moonshot -m kimi-k2.7-code</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Why Choose Moonshot AI?</h3>
+
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Long Context</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>Kimi models handle very large codebases in a single query</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Code-Specialized Variant</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>Dedicated K2.7-code model for software development tasks</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className={`${isDark ? 'text-green-400' : 'text-green-600'} text-xl shrink-0`}>✓</span>
+                <div>
+                  <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm font-medium`}>Low Cost</p>
+                  <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-xs mt-1`}>Competitive quality at a fraction of frontier pricing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={`${isDark ? 'bg-yellow-400/10 border-yellow-400/30' : 'bg-yellow-400/20 border-yellow-500/40'} border rounded-lg p-4`}>
+            <p className={`${isDark ? 'text-yellow-300' : 'text-yellow-700'} text-sm font-semibold`}>💰 Budget-Friendly, Long-Context Choice</p>
+            <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-xs mt-1`}>Good pick for large codebases or high-volume usage without a big API bill.</p>
           </div>
         </div>
       </div>
