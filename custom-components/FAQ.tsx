@@ -1,11 +1,10 @@
 'use client'
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
 import { useTheme } from "@/contexts/ThemeContext"
 
 export const FAQ = () => {
   const { isDark } = useTheme()
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
     {
@@ -35,49 +34,50 @@ export const FAQ = () => {
   ] 
 
   return (
-    <section className={`relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}>
+    <section className={`relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}>
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-neutral-300/70' : 'text-stone-700/70'} mb-3`}>
-            Frequently Asked <span className={isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'}>Questions</span>
+        <div className="text-center mb-14 sm:mb-20">
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-neutral-200' : 'text-stone-800'} mb-3`}>
+            Frequently Asked <span className={isDark ? 'text-yellow-400' : 'text-yellow-500'}>Questions</span>
           </h2>
-          <p className={`${isDark ? 'text-neutral-200/70' : 'text-stone-600/70'} text-sm sm:text-base`}>
+          <p className={`${isDark ? 'text-neutral-400' : 'text-stone-600'} text-sm sm:text-base`}>
             Everything you need to know about QuackStack
           </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-stone-800/5 border-stone-300/30'} backdrop-blur-xl border rounded-lg overflow-hidden transition-all duration-300`}
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-4 sm:p-6 text-left"
-              >
-                <h3 className={`text-base sm:text-lg font-medium pr-4 ${isDark ? 'text-yellow-400/70' : 'text-yellow-600/80'} transition-colors`}>
-                  {faq.question}
-                </h3>
-                <ChevronDown
-                  className={`w-5 h-5 ${isDark ? 'text-neutral-300/70' : 'text-stone-600/70'} shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
+        <div className={`border-t ${isDark ? 'border-white/10' : 'border-stone-900/10'}`}>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+            return (
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
+                key={index}
+                className={`border-b ${isDark ? 'border-white/10' : 'border-stone-900/10'}`}
               >
-                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                  <p className={`${isDark ? 'text-neutral-200/60' : 'text-stone-600/70'} text-sm sm:text-base leading-relaxed`}>
-                    {faq.answer}
-                  </p>
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between gap-5 py-5 sm:py-6 text-left"
+                >
+                  <h3 className={`text-base sm:text-lg font-medium tracking-tight ${isDark ? 'text-neutral-200' : 'text-stone-800'}`}>
+                    {faq.question}
+                  </h3>
+                  <span className="relative w-[18px] h-[18px] shrink-0">
+                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-[1.6px] ${isDark ? 'bg-yellow-400' : 'bg-yellow-600'}`} />
+                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1.6px] h-3 ${isDark ? 'bg-yellow-400' : 'bg-yellow-600'} transition-all duration-300 ${isOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`} />
+                  </span>
+                </button>
+                <div
+                  className="grid transition-[grid-template-rows] duration-300 ease-out"
+                  style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+                >
+                  <div className="overflow-hidden">
+                    <p className={`${isDark ? 'text-neutral-400' : 'text-stone-600'} text-sm sm:text-base leading-relaxed pb-5 sm:pb-6 pr-8`}>
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

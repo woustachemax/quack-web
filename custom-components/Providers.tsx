@@ -35,14 +35,14 @@ export const Providers = () => {
   return (
     <section
       id="providers"
-      className={`relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}
+      className={`relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}
     >
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-stone-300/70' : 'text-stone-700/70'} mb-3`}>
+      <div className="text-center mb-14 sm:mb-20">
+        <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-800'} mb-3`}>
           Bring Your Own{" "}
-          <span className={isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'}>AI</span>
+          <span className={isDark ? 'text-yellow-400' : 'text-yellow-500'}>AI</span>
         </h2>
-        <p className={`${isDark ? 'text-stone-400/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-2xl mx-auto`}>
+        <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-sm sm:text-base max-w-2xl mx-auto`}>
           Plug in whichever provider you already have a key for, switch anytime
         </p>
       </div>

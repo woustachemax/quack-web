@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import { Check, Copy } from "lucide-react"
 import { useTheme } from "@/contexts/ThemeContext"
+import { Reveal } from "@/custom-components/Reveal"
 
 export const Features = () => {
   const { isDark } = useTheme()
@@ -81,53 +82,55 @@ export const Features = () => {
   return (
     <section
       id="features"
-      className={`relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} backdrop-blur-sm transition-colors duration-300`}
+      className={`relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-stone-900' : 'bg-stone-50'} backdrop-blur-sm transition-colors duration-300`}
     >
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-stone-300/70' : 'text-stone-700/70'} mb-3`}>
+      <div className="text-center mb-14 sm:mb-20">
+        <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-800'} mb-3`}>
           <span>{displayText.substring(0, 5)}</span>
-          <span className={isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'}>
+          <span className={isDark ? 'text-yellow-400' : 'text-yellow-500'}>
             {displayText.substring(5, 15)}
           </span>
           <span>{displayText.substring(15)}</span>
           <span className={`inline-block w-0.5 h-8 sm:h-10 ${isDark ? 'bg-yellow-400' : 'bg-yellow-500'} ml-1 ${displayText.length === fullText.length ? 'animate-pulse' : ''}`}></span>
         </h2>
-        <p className={`${isDark ? 'text-stone-400/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-2xl mx-auto`}>
+        <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-sm sm:text-base max-w-2xl mx-auto`}>
           A few commands that make your repo talk back
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
+      <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24">
         {commands.map((c, i) => (
-          <div 
-            key={i} 
-            className={`flex flex-col lg:flex-row gap-6 lg:gap-8 items-center ${
+          <div
+            key={i}
+            className={`flex flex-col lg:flex-row gap-6 lg:gap-10 items-center ${
               i % 2 === 1 ? 'lg:flex-row-reverse' : ''
             }`}
           >
-            <div className="w-full lg:w-1/2">
-              <div className={`relative ${isDark ? 'bg-white/5' : 'bg-stone-800/5'} backdrop-blur-xl rounded-lg sm:rounded-2xl p-1 sm:p-1.5 border ${isDark ? 'border-white/10 hover:border-stone-700' : 'border-stone-300/30 hover:border-stone-400'} shadow-xl transition-all duration-300`}>
-                <div className={`${isDark ? 'bg-stone-900' : 'bg-stone-100'} backdrop-blur-sm rounded-lg overflow-hidden w-full border ${isDark ? 'border-white/10' : 'border-stone-300/30'} shadow-lg`}>
-                  <div className={`flex items-center justify-between px-3 sm:px-4 py-2 ${isDark ? 'bg-stone-800/80' : 'bg-stone-200/80'} backdrop-blur-sm border-b ${isDark ? 'border-white/10' : 'border-stone-300/30'}`}>
-                    <div className="flex space-x-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <Reveal className="w-full lg:w-1/2">
+              <div className={`relative ${isDark ? 'bg-white/5' : 'bg-stone-800/5'} backdrop-blur-xl rounded-2xl p-1 sm:p-1.5 border ${isDark ? 'border-white/10 hover:border-stone-700' : 'border-stone-300/30 hover:border-stone-400'} shadow-xl transition-all duration-300`}>
+                <div className={`${isDark ? 'bg-stone-900' : 'bg-white'} backdrop-blur-sm rounded-xl overflow-hidden w-full border ${isDark ? 'border-white/10' : 'border-stone-200'} shadow-lg`}>
+                  <div className={`flex items-center justify-between px-3 sm:px-4 py-2.5 border-b ${isDark ? 'bg-stone-800/80 border-white/10' : 'bg-stone-100 border-stone-200'}`}>
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex space-x-1.5">
+                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                      </div>
                     </div>
-                    <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>terminal</span>
+                    <span className={`font-mono text-[11px] ${isDark ? 'text-stone-500' : 'text-stone-500'}`}>{String(i + 1).padStart(2, '0')} / {String(commands.length).padStart(2, '0')}</span>
                   </div>
 
-                  <div className={`flex justify-between items-center min-h-[100px] sm:min-h-[110px] px-3 sm:px-4 py-3 font-mono text-xs sm:text-sm ${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                  <div className={`flex justify-between items-center min-h-[100px] sm:min-h-[110px] px-3 sm:px-4 py-3 font-mono text-xs sm:text-sm ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
                     <div className="flex items-center flex-wrap">
                       <span className={isDark ? 'text-green-400' : 'text-green-600'}>quack@stack</span>
-                      <span className={isDark ? 'text-stone-400' : 'text-stone-500'}>:</span>
+                      <span className={isDark ? 'text-neutral-400' : 'text-stone-500'}>:</span>
                       <span className={isDark ? 'text-blue-400' : 'text-blue-600'}>~</span>
-                      <span className={isDark ? 'text-stone-400' : 'text-stone-500'}>$</span>
+                      <span className={isDark ? 'text-neutral-400' : 'text-stone-500'}>$</span>
                       <span className="ml-2 break-all">{c.cmd}</span>
                     </div>
                     <button
                       onClick={() => handleCopy(c.cmd, i)}
-                      className={`ml-4 p-1.5 ${isDark ? 'hover:bg-white/10' : 'hover:bg-stone-300/30'} rounded transition-colors`}
+                      className={`ml-4 p-1.5 rounded transition-colors ${isDark ? 'hover:bg-white/10' : 'hover:bg-stone-200'}`}
                       title="Copy command"
                     >
                       {copied === i ? (
@@ -139,16 +142,17 @@ export const Features = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="w-full lg:w-1/2 space-y-3">
-              <h3 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>
+            <Reveal delay={100} className="w-full lg:w-1/2 space-y-3">
+              <span className={`font-mono text-xs ${isDark ? 'text-yellow-400/70' : 'text-yellow-600/70'}`}>{String(i + 1).padStart(2, '0')}</span>
+              <h3 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300' : 'text-yellow-600'} font-semibold tracking-tight`}>
                 {c.title}
               </h3>
-              <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>
+              <p className={`${isDark ? 'text-stone-400' : 'text-stone-600'} text-sm sm:text-base leading-relaxed`}>
                 {c.desc}
               </p>
-            </div>
+            </Reveal>
           </div>
         ))}
       </div>
