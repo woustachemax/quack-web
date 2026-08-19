@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Github, Copy, Check, Terminal } from "lucide-react"
 import {BackgroundRippleEffect} from "@/components/ui/background-ripple-effect"
 import { useTheme } from "@/contexts/ThemeContext"
+import { Reveal } from "@/custom-components/Reveal"
 
 export const Hero = () => {
   const { isDark } = useTheme();
@@ -45,59 +46,62 @@ export const Hero = () => {
   };
 
   return (
-    <section className={`relative min-h-screen flex flex-col items-center justify-center text-center pt-32 sm:pt-40 px-4 sm:px-6 lg:px-8 overflow-hidden ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}>
+    <section id="top" className={`relative min-h-screen flex flex-col items-center justify-center text-center pt-28 sm:pt-36 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden ${isDark ? 'bg-stone-900' : 'bg-stone-50'} transition-colors duration-300`}>
       <BackgroundRippleEffect className="absolute inset-0 -z-10"/>
 
-      <div className="z-10 mb-6 text-center space-y-2">
-        <div className="max-w-2xl mx-auto">
-          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight ${isDark ? 'text-neutral-300/70' : 'text-stone-700/70'}`}>
+      <div className="z-10 mb-6 text-center flex flex-col items-center gap-5">
+        <Reveal className={`inline-flex items-center gap-2 font-mono text-[11px] sm:text-xs uppercase tracking-[0.08em] px-3.5 py-1.5 rounded-lg border backdrop-blur-sm ${isDark ? 'text-neutral-300 bg-white/5 border-white/10' : 'text-stone-600 bg-white/70 border-stone-900/10'}`}>
+          <span className={`w-1.5 h-1.5 rounded-full ${isDark ? 'bg-yellow-400' : 'bg-yellow-500'}`} />
+          Open source CLI
+        </Reveal>
+
+        <Reveal delay={80} className="max-w-2xl mx-auto">
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.08] tracking-tight ${isDark ? 'text-neutral-200' : 'text-stone-800'}`}>
             Your{" "}
-            <span className={`inline-block cursor-pointer ${isDark ? 'text-yellow-400/70' : 'text-yellow-500/80'} origin-center hover-tilt`}>
+            <span className={`inline-block cursor-pointer ${isDark ? 'text-yellow-400' : 'text-yellow-500'} origin-center hover-tilt`}>
               cracked
             </span>{" "}
             unpaid intern for all things{" "}
-            <span className={isDark ? 'text-yellow-400/60' : 'text-yellow-500/70'}>codebase related!</span>
+            <span className={isDark ? 'text-yellow-400' : 'text-yellow-500'}>codebase related!</span>
           </h1>
-          <p className={`mt-3 ${isDark ? 'text-neutral-200/70' : 'text-stone-600/70'} text-sm sm:text-base max-w-xl mx-auto`}>
+          <p className={`mt-4 ${isDark ? 'text-neutral-400' : 'text-stone-600'} text-sm sm:text-base max-w-xl mx-auto`}>
             Your code&apos;s got something to say!
           </p>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center max-w-md mx-auto mt-4">
+        <Reveal delay={140} className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 justify-center max-w-md mx-auto mt-2">
           <button onClick={()=> window.location.href='/docs'}
-            className={`group gradient-hover w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-yellow-400/20 border-yellow-400/30 hover:border-yellow-400/50 text-yellow-300' : 'bg-yellow-400/30 border-yellow-500/40 hover:border-yellow-500/60 text-yellow-600'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}
-            style={{ '--btn-gradient': isDark
-              ? 'linear-gradient(90deg, rgba(253,224,71,0.12), rgba(234,179,8,0.2), rgba(254,240,138,0.12), rgba(234,179,8,0.2), rgba(253,224,71,0.12))'
-              : 'linear-gradient(90deg, rgba(202,138,4,0.1), rgba(234,179,8,0.16), rgba(161,98,7,0.1), rgba(234,179,8,0.16), rgba(202,138,4,0.1))'
-            } as React.CSSProperties}>
+            className={`group w-full sm:w-auto px-6 py-3 border text-sm sm:text-base rounded-xl font-medium flex items-center justify-center gap-2 shadow-sm transition-colors duration-150 ease-out active:scale-[0.98] ${isDark ? 'bg-yellow-400 border-yellow-400 text-stone-900 hover:bg-yellow-300' : 'bg-stone-900 border-stone-900 text-stone-50 hover:bg-stone-800'}`}>
             <span>Get Started</span>
             <Terminal className="w-4 h-4"/>
           </button>
           <button onClick={()=> window.open('https://github.com/woustachemax/QuackStack')}
-            className={`group gradient-hover w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 ${isDark ? 'bg-stone-800/50 border-stone-700 hover:border-stone-600 text-neutral-200' : 'bg-stone-200/50 border-stone-300 hover:border-stone-400 text-stone-700'} border text-sm sm:text-base rounded-lg font-medium flex items-center justify-center space-x-1 shadow-sm backdrop-blur-sm transition-all duration-300`}
-            style={{ '--btn-gradient': isDark
-              ? 'linear-gradient(90deg, rgba(214,211,209,0.12), rgba(168,162,158,0.22), rgba(231,229,228,0.12), rgba(168,162,158,0.22), rgba(214,211,209,0.12))'
-              : 'linear-gradient(90deg, rgba(87,83,78,0.1), rgba(120,113,108,0.18), rgba(68,64,60,0.1), rgba(120,113,108,0.18), rgba(87,83,78,0.1))'
-            } as React.CSSProperties}>
+            className={`group w-full sm:w-auto px-6 py-3 border text-sm sm:text-base rounded-xl font-medium flex items-center justify-center gap-2 backdrop-blur-sm transition-colors duration-150 ease-out active:scale-[0.98] ${isDark ? 'bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/[0.08] text-neutral-200' : 'bg-white/60 border-stone-900/10 hover:border-stone-900/25 hover:bg-white/90 text-stone-700'}`}>
             <span>Contribute</span>
             <Github className="w-4 h-4"/>
           </button>
-        </div>
+        </Reveal>
+
+        <Reveal delay={200} className={`font-mono text-[11px] sm:text-xs flex items-center gap-2 ${isDark ? 'text-neutral-500' : 'text-stone-500'}`}>
+          <span>Open source on GitHub</span>
+          <span>·</span>
+          <span>Works with npm, pnpm and bun</span>
+        </Reveal>
       </div>
 
-      <div className={`relative z-10 w-full flex justify-center mt-10`}>
-        <div className={`relative ${isDark ? 'bg-white/5' : 'bg-stone-800/5'} backdrop-blur-xl rounded-lg sm:rounded-2xl p-1 sm:p-1.5 border ${isDark ? 'border-white/10' : 'border-stone-300/30'} shadow-xl w-full max-w-[90%] sm:max-w-lg lg:max-w-2xl transition-all duration-500`}>
-          <div className={`${isDark ? 'bg-stone-900' : 'bg-stone-100'} backdrop-blur-sm rounded-lg overflow-hidden h-[100px] sm:h-[110px] lg:h-[120px] w-full border ${isDark ? 'border-white/10' : 'border-stone-300/30'} shadow-lg ${hideTerminal ? 'opacity-0 h-0 p-0 border-0 shadow-none' : ''} transition-all duration-500`}> 
-            <div className={`flex items-center justify-between px-3 sm:px-4 py-2 ${isDark ? 'bg-stone-800/80' : 'bg-stone-200/80'} backdrop-blur-sm border-b ${isDark ? 'border-white/10' : 'border-stone-300/30'}`}>
+      <Reveal delay={260} className="relative z-10 w-full flex justify-center mt-10">
+        <div className={`relative ${isDark ? 'bg-white/5' : 'bg-stone-800/5'} backdrop-blur-xl rounded-2xl p-1 sm:p-1.5 border ${isDark ? 'border-white/10' : 'border-stone-300/30'} shadow-2xl w-full max-w-[90%] sm:max-w-lg lg:max-w-2xl transition-all duration-500`}>
+          <div className={`${isDark ? 'bg-stone-900' : 'bg-white'} backdrop-blur-sm rounded-xl overflow-hidden h-[104px] sm:h-[114px] lg:h-[124px] w-full border ${isDark ? 'border-white/10' : 'border-stone-200'} shadow-lg ${hideTerminal ? 'opacity-0 h-0 p-0 border-0 shadow-none' : ''} transition-all duration-500`}>
+            <div className={`flex items-center justify-between px-3 sm:px-4 py-2.5 border-b ${isDark ? 'bg-stone-800/80 border-white/10' : 'bg-stone-100 border-stone-200'}`}>
               <div className="flex space-x-1.5">
                 <div onClick={()=> setHideTerminal(!hideTerminal)}
-                  className={`w-3 h-3 rounded-full bg-red-500 cursor-pointer`}></div>
+                  className="w-3 h-3 rounded-full bg-red-500 cursor-pointer"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex items-center space-x-3 text-xs sm:text-sm">
+              <div className="flex items-center space-x-3 font-mono text-[11px] sm:text-xs">
                 {["npm","pnpm","bun"].map(tab => (
-                  <button 
+                  <button
                     key={tab}
                     onClick={() => setActiveTab(tab as 'npm'|'pnpm'|'bun')}
                     className={`transition-colors ${activeTab === tab ? (isDark ? 'text-yellow-400' : 'text-yellow-600') : (isDark ? 'text-neutral-400 hover:text-yellow-400' : 'text-stone-500 hover:text-yellow-600')}`}>
@@ -106,7 +110,7 @@ export const Hero = () => {
                 ))}
               </div>
             </div>
-            <div className={`flex items-center justify-between h-[calc(100%-48px)] px-3 sm:px-4 font-mono text-xs sm:text-sm ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
+            <div className={`flex items-center justify-between h-[calc(100%-46px)] px-3 sm:px-4 font-mono text-xs sm:text-sm ${isDark ? 'text-neutral-300' : 'text-stone-700'}`}>
               <div className="flex items-center">
                 <span className={isDark ? 'text-green-400' : 'text-green-600'}>quack@stack</span>
                 <span className={isDark ? 'text-neutral-400' : 'text-stone-500'}>:</span>
@@ -116,7 +120,7 @@ export const Hero = () => {
               </div>
               <button
                 onClick={handleCopy}
-                className={`ml-4 p-1.5 ${isDark ? 'hover:bg-white/10' : 'hover:bg-stone-300/30'} rounded transition-colors`}
+                className={`ml-4 p-1.5 rounded transition-colors ${isDark ? 'hover:bg-white/10' : 'hover:bg-stone-200'}`}
                 title="Copy command"
               >
                 {copied ? (
@@ -128,7 +132,7 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
