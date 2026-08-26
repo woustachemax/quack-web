@@ -236,6 +236,12 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-opus-5</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus 5, top-tier reasoning and long-horizon agentic work</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>claude-fable-5</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Most capable Claude model, for the hardest escalations</p>
@@ -397,15 +403,21 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.5-flash</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.7-flash</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>GA Flash model, frontier-level agentic and coding performance</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.1-flash-lite-preview</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.6-flash</span>
                 </p>
-                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Lightweight preview for quick replies</p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Improved token efficiency and agentic planning</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>gemini-3.5-flash-lite</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Low-latency, cost-effective subagent model</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
@@ -783,8 +795,14 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             <div className="space-y-2">
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
-                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.5</span>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.6</span>
                   <span className={`${isDark ? 'text-green-400' : 'text-green-600'} ml-2 text-xs`}>Default</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>New flagship, leads on coding, non-hallucination, and agentic tool calling</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>grok-4.5</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Opus-class, built for coding and agentic work</p>
               </div>
@@ -821,7 +839,7 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
             </div>
             <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-3 mt-3`}>
               <p className={`${isDark ? 'text-blue-300' : 'text-blue-600'} text-xs`}>
-                💡 Switch models: <span className="font-mono">quack -p grok -m grok-4.20-reasoning</span>
+                💡 Switch models: <span className="font-mono">quack -p grok -m grok-4.5</span>
               </p>
             </div>
           </div>
@@ -1052,6 +1070,12 @@ export function AIProvidersContent({ activeSection }: { activeSection: string })
                   <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>kimi-k2.7-code</span>
                 </p>
                 <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Kimi K2.7 tuned for coding tasks</p>
+              </div>
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
+                  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} font-mono`}>kimi-k2.7-code-highspeed</span>
+                </p>
+                <p className={`${isDark ? 'text-stone-500' : 'text-stone-600'} text-xs mt-1`}>Latency-tuned variant of K2.7-code</p>
               </div>
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm`}>
