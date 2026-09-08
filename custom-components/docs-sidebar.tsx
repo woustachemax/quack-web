@@ -54,6 +54,8 @@ const sections = [
   icon: GitBranch,
   subsections: [
     { id: 'authors', title: 'Contributor Stats' },
+    { id: 'agents', title: 'Agent vs Human' },
+    { id: 'blame', title: 'Agent Blame' },
     { id: 'recent', title: 'Recent Changes' },
     { id: 'gitInfo', title: 'Repository Info' }
   ]

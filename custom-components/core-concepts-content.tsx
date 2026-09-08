@@ -50,6 +50,15 @@ export function CoreConceptsContent({ activeSection }: { activeSection: string }
               <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
                 <div className="flex items-start space-x-3">
                   <div>
+                    <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Git Enrichment</h4>
+                    <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>QuackStack reads your git history for authorship and ownership, and attributes each commit to a human or an AI agent (Claude Code, Cursor, Windsurf, Copilot) by matching <code>Co-Authored-By:</code> trailers and message patterns, then maps diff hunks to the functions they changed.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-4`}>
+                <div className="flex items-start space-x-3">
+                  <div>
                     <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Storage</h4>
                     <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Embeddings and metadata are stored in your PostgreSQL database, organized by project name for easy isolation.</p>
                   </div>
@@ -182,6 +191,32 @@ function greet(name) {
   updatedAt    DateTime @updatedAt
 
   @@index([projectName])
+}`} />
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Agent Attribution Models</h3>
+            <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Git enrichment also records every commit and which agent (if any) wrote it, mapping diff hunks to the functions they changed:</p>
+
+            <SimpleCodeBlock code={`model commit {
+  hash            String   @id
+  projectName     String
+  authorName      String
+  authorEmail     String
+  agentName       String?
+  agentConfidence String   @default("human")
+  sessionId       String?
+  message         String
+  authoredAt      DateTime
+  files           commitFile[]
+}
+
+model commitFile {
+  id               Int    @id @default(autoincrement())
+  commitHash       String
+  projectName      String
+  filePath         String
+  functionsTouched Json
 }`} />
           </div>
 

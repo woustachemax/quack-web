@@ -184,7 +184,7 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
   const aiProviders = ['openai', 'claude', 'gemini', 'grok', 'deepseek', 'mistral', 'primeintellect', 'moonshot']
   const integrations = ['cursor', 'windsurf', 'cline', 'continue', 'aider']
   const advanced = ['multiple-projects', 'performance', 'troubleshooting']
-  const gitCommands = ['authors', 'recent', 'gitInfo']
+  const gitCommands = ['authors', 'agents', 'blame', 'recent', 'gitInfo']
 
   if (coreConcepts.includes(activeSection)) {
     return <CoreConceptsContent activeSection={activeSection} />

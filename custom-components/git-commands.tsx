@@ -1,4 +1,4 @@
-import { GitBranch, GitCommit, Users, Clock, FileCode, TrendingUp, History } from 'lucide-react'
+import { GitBranch, GitCommit, Users, Clock, FileCode, TrendingUp, History, Bot, Fingerprint, ShieldCheck } from 'lucide-react'
 import { CodeBlock } from './code-block'
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -137,6 +137,233 @@ export function GitCommandsContent({ activeSection }: { activeSection: string })
               <div>
                 <p className={`font-semibold ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Team Insights</p>
                 <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>Understand who knows what parts of your codebase best. Perfect for code reviews and knowledge transfer!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    agents: (
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Agent vs Human Ownership</h2>
+          <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Split your contributor stats by human vs AI agent. QuackStack reads the <code className={`${isDark ? 'bg-stone-800 text-yellow-400' : 'bg-stone-200 text-yellow-600'} px-1.5 py-0.5 rounded`}>Co-Authored-By:</code> trailers and commit-message patterns that AI coding tools leave in git history, with no extra LLM calls.</p>
+        </div>
+
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Split Ownership</h3>
+            <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>See how much of your codebase was written by agents like Claude Code, Cursor, Windsurf, or Copilot:</p>
+
+            <CodeBlock code="quack authors --agents" />
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Example Output</h3>
+
+            <div className={`${isDark ? 'bg-stone-900 border-stone-800' : 'bg-white border-stone-300'} rounded-lg border overflow-hidden`}>
+              <div className={`flex items-center justify-between px-3 sm:px-4 py-2 ${isDark ? 'bg-stone-800/80 border-stone-800' : 'bg-stone-100 border-stone-300'} border-b`}>
+                <div className="flex space-x-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>terminal</span>
+              </div>
+
+              <div className="p-4 font-mono text-xs sm:text-sm space-y-3">
+                <div className={`${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}>
+                  🤖 Agent vs Human Ownership
+                </div>
+
+                <div className="space-y-4 pt-2">
+                  <div>
+                    <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>
+                      Claude Code <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>&nbsp;&nbsp;1 commit, 4 files touched</span>
+                    </div>
+                    <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'} ml-3 text-xs`}>
+                      active 2026-07-11 &rarr; 2026-07-11
+                    </div>
+                    <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'} ml-3 text-xs`}>
+                      confidence: high 1 / medium 0 / low 0
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>
+                      Suspected (unattributed) <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>&nbsp;&nbsp;5 commits, 24 files touched</span>
+                    </div>
+                    <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'} ml-3 text-xs`}>
+                      confidence: high 0 / medium 0 / low 5
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                      Humans <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>&nbsp;&nbsp;71 commits, 31 files touched</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`${isDark ? 'text-cyan-400' : 'text-cyan-600'} pt-2`}>
+                  6/77 commits (8%) attributed to agents
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Confidence Levels</h3>
+
+            <div className="space-y-3">
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-start justify-between">
+                  <code className={`${isDark ? 'text-green-400' : 'text-green-600'} text-sm`}>high</code>
+                  <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>trailer</span>
+                </div>
+                <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>A known agent&apos;s <code>Co-Authored-By:</code> trailer (Claude Code, Cursor, Windsurf, GitHub Copilot, Devin).</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-start justify-between">
+                  <code className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'} text-sm`}>medium</code>
+                  <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>message</span>
+                </div>
+                <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>A recognizable agent commit-message pattern (e.g. Aider).</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-start justify-between">
+                  <code className={`${isDark ? 'text-stone-400' : 'text-stone-500'} text-sm`}>low</code>
+                  <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>fingerprint</span>
+                </div>
+                <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>A generic bot/agent trailer, or a commit-cadence and diff-size fingerprint with no explicit signal.</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-start justify-between">
+                  <code className={`${isDark ? 'text-stone-400' : 'text-stone-500'} text-sm`}>human</code>
+                  <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>default</span>
+                </div>
+                <p className={`text-sm ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>No agent signal.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={`${isDark ? 'bg-blue-400/10 border-blue-400/30' : 'bg-blue-400/20 border-blue-500/40'} border rounded-lg p-4`}>
+            <div className="flex items-start space-x-3">
+              <Bot className={`w-5 h-5 ${isDark ? 'text-blue-400' : 'text-blue-600'} mt-0.5 shrink-0`} />
+              <div>
+                <p className={`font-semibold ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>Reindex for full signal</p>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>Run <code className={`${isDark ? 'bg-stone-800 text-blue-300' : 'bg-stone-200 text-blue-700'} px-1.5 py-0.5 rounded`}>quack --reindex</code> first so QuackStack can compute the cadence-based <code>low</code>-confidence signals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    blame: (
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <h2 className={`text-2xl sm:text-3xl ${isDark ? 'text-yellow-300/80' : 'text-yellow-600/80'} font-semibold tracking-tight`}>Agent Blame</h2>
+          <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base leading-relaxed`}>Resolve any line back to the commit, author, and agent that last changed it, plus the enclosing function.</p>
+        </div>
+
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Blame a Line</h3>
+            <p className={`${isDark ? 'text-stone-400/90' : 'text-stone-600/90'} text-sm sm:text-base`}>Pass a <code className={`${isDark ? 'bg-stone-800 text-yellow-400' : 'bg-stone-200 text-yellow-600'} px-1.5 py-0.5 rounded`}>file:line</code> target:</p>
+
+            <div className="space-y-3">
+              <CodeBlock code="quack blame <file>:<line>" />
+              <CodeBlock code="quack blame src/lib/ai-provider.ts:130" />
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>Example Output</h3>
+
+            <div className={`${isDark ? 'bg-stone-900 border-stone-800' : 'bg-white border-stone-300'} rounded-lg border overflow-hidden`}>
+              <div className={`flex items-center justify-between px-3 sm:px-4 py-2 ${isDark ? 'bg-stone-800/80 border-stone-800' : 'bg-stone-100 border-stone-300'} border-b`}>
+                <div className="flex space-x-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className={`text-xs ${isDark ? 'text-stone-500' : 'text-stone-600'}`}>terminal</span>
+              </div>
+
+              <div className="p-4 font-mono text-xs sm:text-sm space-y-2">
+                <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                  src/lib/ai-provider.ts:130 <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>(in AIClient)</span>
+                </div>
+                <div className="pt-2 space-y-1">
+                  <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                    commit  <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>b804f6f</span>  <span className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>new models, add Prime Intellect provider</span>
+                  </div>
+                  <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                    author  woustachemax &lt;sid2011thakkar@gmail.com&gt;
+                  </div>
+                  <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                    date    2026-07-11
+                  </div>
+                  <div className={`${isDark ? 'text-stone-300' : 'text-stone-700'}`}>
+                    agent   <span className={`${isDark ? 'text-green-400' : 'text-green-600'}`}>Claude Code</span>   confidence: high
+                  </div>
+                  <div className={`${isDark ? 'text-stone-500' : 'text-stone-600'}`}>
+                    session  (none)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'}`}>What It Shows</h3>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-center gap-2">
+                  <GitCommit className={`w-4 h-4 ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                  <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'} text-sm`}>Commit &amp; Author</h4>
+                </div>
+                <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>The commit hash, summary, and git author for that line</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-center gap-2">
+                  <Bot className={`w-4 h-4 ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                  <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'} text-sm`}>Agent &amp; Confidence</h4>
+                </div>
+                <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Which agent wrote it, and how sure QuackStack is</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-center gap-2">
+                  <FileCode className={`w-4 h-4 ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                  <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'} text-sm`}>Enclosing Function</h4>
+                </div>
+                <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Resolved from the AST index (precise for JS/TS)</p>
+              </div>
+
+              <div className={`${isDark ? 'bg-stone-800/50 border-stone-800' : 'bg-stone-100/50 border-stone-300'} border rounded-lg p-3`}>
+                <div className="flex items-center gap-2">
+                  <Fingerprint className={`w-4 h-4 ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                  <h4 className={`font-semibold ${isDark ? 'text-stone-200' : 'text-stone-700'} text-sm`}>Session ID</h4>
+                </div>
+                <p className={`text-xs ${isDark ? 'text-stone-400' : 'text-stone-600'} mt-1`}>Shown when the commit trailer embeds one</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={`${isDark ? 'bg-green-400/10 border-green-400/30' : 'bg-green-400/20 border-green-500/40'} border rounded-lg p-4`}>
+            <div className="flex items-start space-x-3">
+              <ShieldCheck className={`w-5 h-5 ${isDark ? 'text-green-400' : 'text-green-600'} mt-0.5 shrink-0`} />
+              <div>
+                <p className={`font-semibold ${isDark ? 'text-green-300' : 'text-green-700'}`}>Works without indexing</p>
+                <p className={`${isDark ? 'text-stone-300' : 'text-stone-700'} text-sm mt-1`}>Even on a fresh repo, <code className={`${isDark ? 'bg-stone-800 text-green-400' : 'bg-stone-200 text-green-700'} px-1.5 py-0.5 rounded`}>quack blame</code> classifies the commit message on the fly. Reindex to add cadence signals and the function name.</p>
               </div>
             </div>
           </div>
