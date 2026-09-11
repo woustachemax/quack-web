@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react'
-import { ChevronRight, Home, BookOpen, Settings, Terminal, Sparkles, Code, Search, X, GitBranch } from 'lucide-react'
+import { ChevronRight, Home, BookOpen, Settings, Terminal, Sparkles, Code, Search, X, GitBranch, ClipboardCheck } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -60,6 +60,16 @@ const sections = [
     { id: 'gitInfo', title: 'Repository Info' }
   ]
 },
+  {
+    id: 'plan-commands',
+    title: 'Plan Auditing',
+    icon: ClipboardCheck,
+    subsections: [
+      { id: 'planCreate', title: 'Create a Plan' },
+      { id: 'planCheck', title: 'Check a Plan' },
+      { id: 'planHook', title: 'Pre-push Hook' }
+    ]
+  },
   {
     id: 'ai-providers',
     title: 'AI Providers',

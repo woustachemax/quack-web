@@ -8,6 +8,7 @@ import { AIProvidersContent } from './ai-providers-content'
 import { IntegrationsContent } from './integrations-content'
 import { AdvancedUsageContent } from './advanced-usage-content'
 import { GitCommandsContent } from './git-commands'
+import { PlanCommandsContent } from './plan-commands'
 import { SimpleCodeBlock } from './simpler-code-block'
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -185,6 +186,7 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
   const integrations = ['cursor', 'windsurf', 'cline', 'continue', 'aider']
   const advanced = ['multiple-projects', 'performance', 'troubleshooting']
   const gitCommands = ['authors', 'agents', 'blame', 'recent', 'gitInfo']
+  const planCommands = ['planCreate', 'planCheck', 'planHook']
 
   if (coreConcepts.includes(activeSection)) {
     return <CoreConceptsContent activeSection={activeSection} />
@@ -208,6 +210,10 @@ QUACKSTACK_OPENAI_KEY=sk-...`} />
 
   if (gitCommands.includes(activeSection)) {
     return <GitCommandsContent activeSection={activeSection} />
+  }
+
+  if (planCommands.includes(activeSection)) {
+    return <PlanCommandsContent activeSection={activeSection} />
   }
 
   return gettingStartedContent[activeSection] || gettingStartedContent.installation
